@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "1";
+    src: url(../storage/fontss/Formula1-Bold.otf);
+}
+@font-face {
+    font-family: "2";
+    src: url(../storage/fontss/Formula1-Regular.otf);
+}
+@font-face {
+    font-family: "3";
+    src: url(../storage/fontss/Formula1-Wide.otf);
+}
+h1{
+    font-family: "2";
+    font-size: 2vw;
+
+}
+h2{
+    font-family: "1";
+    font-size: 3vw;
+}
