@@ -10,100 +10,84 @@
     font-family: "3";
     src: url(../storage/fontss/Formula1-Wide.otf);
 }
-h1{
-    font-family: "2";
-    font-size: 2vw;
 
-}
-h2{
-    font-family: "1";
-    font-size: 3vw;
-}
-
-
-body, html {
+body {
   margin: 0;
   padding: 0;
-  background: black;
+  background-color: #0D101C;
   overflow: hidden;
-}
-
-/* Fondo de líneas de velocidad */
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.08) 0px,
-    rgba(255, 255, 255, 0.08) 2px,
-    transparent 2px,
-    transparent 6px
-  );
-  animation: speedLines 1.3s linear forwards;
-  z-index: 0;
-}
-
-@keyframes speedLines {
-  0% {
-    background-position: 0 0;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    background-position: 0 2000px;
-    opacity: 0;
-  }
+  font-family: "2"; 
 }
 
 .container {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  perspective: 2000px;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.login_container {
+  position: relative;
   z-index: 1;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  padding: 2vw;
+  gap: 1.5vw;
+  border: 2px solid #1476FF;
+  box-shadow: 0 0 7px 1px #0CFFF4;
+  border-radius: 1.5vw;
 }
 
-.f1-car {
-  width: 120px;
-  transform-origin: center center;
-  animation: zoomInRace 1.3s ease-in forwards;
-  z-index: 2;
+.logo_f1 {
+  width: 6vw;
+  margin-top: -2vw;
 }
 
-/* Animación super fluida */
-@keyframes zoomInRace {
-  0% {
-    transform: scale(0.05);
-    opacity: 0;
-  }
+h2.sign {
+  font-family: "2"; 
+  color: white;
+  font-size: 2vw;
+  margin: 0;
+}
 
-  10% {
-    transform: scale(0.1);
-    opacity: 1;
-  }
+.input_user,
+.input_contrasena {
+  width: 100%;
+  background-color: #0D101C;
+  border: 0.15vw solid #1476FF;
+  border-radius: 0.5vw;
+  padding: 0.8vw;
+  color: white;
+  font-family: "2";
+  font-size: 1vw;
+}
 
-  30% {
-    transform: scale(0.5);
-  }
+.ingresar {
+  width: 100%;
+  padding: 0.8vw;
+  background-color: #B00000;
+  border: none;
+  border-radius: 0.5vw;
+  color: white;
+  font-family: "1"; 
+  font-size: 1.2vw;
+  cursor: pointer;
+}
 
-  50% {
-    transform: scale(2);
-  }
-
-  70% {
-    transform: scale(6);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(50) translateY(-200px);
-    opacity: 0;
-  }
+.ingresar:hover {
+  background-color: #ff0000;
 }
