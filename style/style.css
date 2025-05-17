@@ -1,64 +1,54 @@
 @font-face {
-    font-family: "1";
-    src: url(../storage/fontss/Formula1-Bold.otf);
+  font-family: "1";
+  src: url(../storage/fontss/Formula1-Bold.otf);
 }
 @font-face {
-    font-family: "2";
-    src: url(../storage/fontss/Formula1-Regular.otf);
+  font-family: "2";
+  src: url(../storage/fontss/Formula1-Regular.otf);
 }
 @font-face {
-    font-family: "3";
-    src: url(../storage/fontss/Formula1-Wide.otf);
+  font-family: "3";
+  src: url(../storage/fontss/Formula1-Wide.otf);
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #0D101C;
+  background-color: #100c24;
+  font-family: "2";
   overflow: hidden;
-  font-family: "2"; 
-}
-
-.container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.background {
-  position: absolute;
-  width: auto;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .login_container {
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
   display: flex;
   flex-direction: column;
   align-items: center;
+
   width: 25vw;
   padding: 2vw;
   gap: 1.5vw;
+
+  backdrop-filter: blur(10px); 
   border: 2px solid #1476FF;
   box-shadow: 0 0 7px 1px #0CFFF4;
   border-radius: 1.5vw;
+  z-index: 1;
 }
 
 .logo_f1 {
   width: 6vw;
   margin-top: -2vw;
 }
-
-h2.sign {
-  font-family: "2"; 
+.sign {
+  margin-top: -2vw;
+}
+h2 {
+  font-family: "2";
   color: white;
   font-size: 2vw;
   margin: 0;
@@ -77,17 +67,47 @@ h2.sign {
 }
 
 .ingresar {
-  width: 100%;
+  width: 20vw;
   padding: 0.8vw;
   background-color: #B00000;
   border: none;
   border-radius: 0.5vw;
   color: white;
-  font-family: "1"; 
+  font-family: "1";
   font-size: 1.2vw;
   cursor: pointer;
 }
 
 .ingresar:hover {
   background-color: #ff0000;
+}
+
+@media only screen and (max-width: 430px){
+  .login_container{
+    width: 60vw;
+    height: 70vw;
+    gap: 3vw;
+  }
+  .logo_f1{
+    width: 20vw;
+  }
+  .sign{
+    font-size: 6vw;
+  }
+  .input_user{
+    width: 46vw;
+    padding: 2vw;
+    font-size: 2.5vw;
+  }
+  .input_contrasena{
+    width: 46vw;
+    padding: 2vw;
+    font-size: 2.5vw;
+  }
+  .ingresar{
+    width: 46vw;
+    padding: 2vw;
+    font-size: 2.7vw;
+    margin-top: 6vw;
+  }
 }
