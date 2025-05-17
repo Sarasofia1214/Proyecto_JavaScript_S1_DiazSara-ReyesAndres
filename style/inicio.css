@@ -1,3 +1,16 @@
+@font-face {
+    font-family: "1";
+    src: url(../storage/fontss/Formula1-Bold.otf);
+  }
+  @font-face {
+    font-family: "2";
+    src: url(../storage/fontss/Formula1-Regular.otf);
+  }
+  @font-face {
+    font-family: "3";
+    src: url(../storage/fontss/Formula1-Wide.otf);
+  }
+  
 body{
     margin: 0;
     padding: 0;
@@ -5,7 +18,21 @@ body{
     background-color: #282424;
 }
 .f1_car{
-    width: 70%;
-    height: 100vh;
+    margin-left: 50%;
+    margin-top: 20vw;
+    height: auto;
 
+}
+.car{
+    width: 100%;
+}
+header{
+    background-color: #D9D9D9;
+    display: flex;
+    gap: 10vw;
+    overflow: hidden;
+
+}
+p{
+    font-family: "3" ;
 }
