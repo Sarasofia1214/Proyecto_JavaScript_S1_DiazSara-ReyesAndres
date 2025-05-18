@@ -3,3 +3,7 @@ function mostrarEscuderias() {
     document.getElementById("cuadro").style.display = "flex"
     ;
 }
+
+function ocultarEscuderias() {
+    document.getElementById("cuadro").style.display = "none";
+}
