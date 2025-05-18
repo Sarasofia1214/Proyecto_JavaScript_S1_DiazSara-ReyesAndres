@@ -1,47 +1,102 @@
 @font-face {
-    font-family: "1";
-    src: url(../storage/fontss/Formula1-Bold.otf);
-  }
-  @font-face {
-    font-family: "2";
-    src: url(../storage/fontss/Formula1-Regular.otf);
-  }
-  @font-face {
-    font-family: "3";
-    src: url(../storage/fontss/Formula1-Wide.otf);
-  }
-  
-body{
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #282424;
+  font-family: "1";
+  src: url(../storage/fontss/Formula1-Bold.otf);
 }
-.f1_car{
-    margin-left: 50%;
-    margin-top: 20vw;
-    height: auto;
+@font-face {
+  font-family: "2";
+  src: url(../storage/fontss/Formula1-Regular.otf);
+}
+@font-face {
+  font-family: "3";
+  src: url(../storage/fontss/Formula1-Wide.otf);
+}
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #282424;
+  font-family: "2";
 }
-.car{
-    width: 100%;
-}
-header{
-    background-color: #D9D9D9;
-    display: flex;
-    gap: 10vw;
-    height: 5vw;
-    width: 100%;
-    padding-left: 1vw;
-    align-items: center;
-    overflow: hidden;
 
-}
-p{
-    font-family: "3" ;
-    font-size: 0.7vw;
 
+header {
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  height: 5vw;
+  width: 100%;
+  gap: 8vw;
+  font-family: "3";
 }
-.logo{
+
+.logo {
   width: 10vw;
+}
+
+header{
+  font-size: 0.9vw;
+  cursor: pointer;
+}
+
+.main_container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 5vw); 
+}
+
+
+.left_container {
+  background-color: #ffffff;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2vw;
+}
+
+.logo_right {
+  border-bottom: 0.1vw solid #000000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1vw;
+}
+
+.logo2 {
+  width: 15vw;
+}
+
+.container_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vw 0;
+}
+
+.f1_text,
+.f1_text2 {
+  font-family: "2";
+  font-size: 0.9vw;
+  text-align: center;
+  width: 22vw;
+  margin: 1vw 0;
+}
+
+.cabezas {
+  width: 15vw;
+  margin: 1vw 0;
+}
+
+
+.right_image {
+  background-color: black;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f1_car {
+  width: 80%;
+  height: auto;
 }
