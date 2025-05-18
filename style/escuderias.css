@@ -1,3 +1,12 @@
+body{
+  background-color: black;
+  margin: 0vw;
+  padding: ovw;
+}
+
+
+
+
 @font-face {
     font-family: "1";
     src: url(../storage/fontss/Formula1-Bold.otf);
@@ -22,3 +31,153 @@
     font-size: 0.9vw;
     cursor: pointer;
   }
+  
+
+.logo {
+  width: 10vw;
+}
+
+
+
+.escuderias_container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 90vh;
+  margin-left: 10vw;
+  gap: 1vw;
+  margin-top: 5vh;
+}
+
+.escuderias_container_1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+ 
+}
+
+.escuderias_container_2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+.escuderias_container_3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+  justify-content: center;
+}
+
+#cuadro {
+  position: absolute;
+  width: 80vw;
+  height: 50vw;
+  background-color: #d9d9d9;
+  border-radius: 2vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-family: "1";
+  font-size: 2vw;
+  color: black;
+  cursor: pointer;
+  top: 3vh;
+  left: 4vw;
+}
+
+.Nombre{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 0vw;
+  top: 0vh
+}
+.nombre_1{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 23vw;
+  top: 0vh
+}
+.pais{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 0vw;
+  top: 4vh
+}
+.pais_1{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 7vw;
+  top: 4vh
+}
+.modelo{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 0vw;
+  top: 8vh
+}
+.modelo_1{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 11vw;
+  top: 8vh
+}
+.copas{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 0vw;
+  top: 12vh
+}
+.copas_1{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 22vw;
+  top: 12vh
+}
+.entrada{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 0vw;
+  top: 16vh
+}
+.entrada_1{
+  position: absolute; 
+  font-family: "2";
+  font-size: 2vw;
+  color: black;
+  left: 22vw;
+  top: 16vh
+}
+.piloto_1{
+  position: absolute; 
+  width: 20vw;
+  height: 25vw;
+  top: 8vh;
+  left: 30vw;
+  border-radius: 2vw;
+}
+.piloto_2{
+  position: absolute; 
+  width: 20vw;
+  height: 25vw;
+  top: 8vh;
+  left: 55vw;
+  border-radius: 2vw;
+}
