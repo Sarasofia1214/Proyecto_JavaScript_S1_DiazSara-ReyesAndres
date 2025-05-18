@@ -30,9 +30,18 @@ header{
     background-color: #D9D9D9;
     display: flex;
     gap: 10vw;
+    height: 5vw;
+    width: 100%;
+    padding-left: 1vw;
+    align-items: center;
     overflow: hidden;
 
 }
 p{
     font-family: "3" ;
+    font-size: 0.7vw;
+
+}
+.logo{
+  width: 10vw;
 }
