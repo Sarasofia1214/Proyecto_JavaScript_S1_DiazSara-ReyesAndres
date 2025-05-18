@@ -16,6 +16,8 @@ body {
   padding: 0;
   background-color: #282424;
   font-family: "2";
+  overflow: hidden;
+ 
 }
 
 
@@ -27,21 +29,20 @@ header {
   width: 100%;
   gap: 8vw;
   font-family: "3";
-}
-
-.logo {
-  width: 10vw;
-}
-
-header{
   font-size: 0.9vw;
   cursor: pointer;
 }
 
+.logo {
+  width: 10vw;
+  padding-left: 2vw;
+}
+
+
 .main_container {
   display: flex;
   width: 100%;
-  height: calc(100vh - 5vw); 
+  height: 100vh;
 }
 
 
@@ -73,18 +74,22 @@ header{
   padding: 2vw 0;
 }
 
-.f1_text,
+.f1_text{
+  font-family: "2";
+  font-size: 1.2vw;
+  text-align: center;
+  width: 33vw;
+ 
+}
 .f1_text2 {
   font-family: "2";
-  font-size: 0.9vw;
+  font-size: 1.2vw;
   text-align: center;
-  width: 22vw;
-  margin: 1vw 0;
+  width: 39vw;
+  padding-top:1vw ;
 }
-
 .cabezas {
-  width: 15vw;
-  margin: 1vw 0;
+  width: 38vw;
 }
 
 
@@ -98,5 +103,15 @@ header{
 
 .f1_car {
   width: 80%;
-  height: auto;
+}
+.car{
+  width: 42vw;
+  height: 50vh;
+}
+a{
+  text-decoration: none;
+  color: #000000;
+}
+::-webkit-scrollbar {
+  display: none;
 }
