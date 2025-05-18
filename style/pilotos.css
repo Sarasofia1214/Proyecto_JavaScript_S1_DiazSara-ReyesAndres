@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "1";
+    src: url(../storage/fontss/Formula1-Bold.otf);
+  }
+  @font-face {
+    font-family: "2";
+    src: url(../storage/fontss/Formula1-Regular.otf);
+  }
+  @font-face {
+    font-family: "3";
+    src: url(../storage/fontss/Formula1-Wide.otf);
+  }
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: black;
+}
+header {
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    height: 5vw;
+    width: 100%;
+    gap: 8vw;
+    font-family: "3";
+    font-size: 0.9vw;
+    cursor: pointer;
+  }
+  
+  .logo {
+    width: 10vw;
+    padding-left: 2vw;
+  }
+
+  .drivers_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 3vw;
+    margin: 4vw;
+    padding: 4vw;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    background-color: #000; 
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 35vw;
+    height: auto;
+    object-fit: cover;
+}
+
+.info_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1vw;
+    flex: 1;
+}
+
+.info_card_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.1vw solid #d9d9d9;
+    border-left: none;
+    padding: 1vw;
+}
+
+.bandera {
+    width: 2.5vw;
+    min-width: 20px;
+    max-width: 30px;
+    height: auto;
+    margin-right: 1vw;
+}
+
+.info_card_body {
+    text-align: left;
+    padding: 1vw;
+}
+
+.posicion {
+    font-size: 6vw;
+    font-weight: bold;
+    margin-top: 1vw;
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card img {
+        width: 80%;
+    }
+
+    .info_card {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info_card_header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .posicion {
+        font-size: 10vw;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.nombre, .modelo, .posicion{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
