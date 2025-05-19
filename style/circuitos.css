@@ -1,0 +1,55 @@
+
+@font-face {
+    font-family: "1";
+    src: url(../storage/fontss/Formula1-Bold.otf);
+  }
+  @font-face {
+    font-family: "2";
+    src: url(../storage/fontss/Formula1-Regular.otf);
+  }
+  @font-face {
+    font-family: "3";
+    src: url(../storage/fontss/Formula1-Wide.otf);
+  }
+
+  header {
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    height: 5vw;
+    width: 100%;
+    gap: 8vw;
+    font-family: "3";
+    font-size: 0.9vw;
+    cursor: pointer;
+  }
+  
+
+.logo {
+  width: 10vw;
+}
+
+.joacarlos{
+    position: absolute;
+    width: 24vw;
+    height: 90vh;
+    left: 0vw;
+}
+
+.cataluña{
+    position: absolute;
+    left: 12vw;
+    height: 90vh;
+}
+.calfat{
+    position: absolute;
+    left: 45vw;
+    width: 28vw;
+    height: 90vh;
+}
+.zolder{
+    position: absolute;
+    left: 73vw;
+    width: 28vw;
+    height: 90vh;
+}

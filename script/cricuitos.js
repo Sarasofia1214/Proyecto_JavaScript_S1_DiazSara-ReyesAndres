@@ -7,11 +7,3 @@ function mostrarEscuderias() {
 function ocultarEscuderias() {
     document.getElementById("cuadro").style.display = "none";
 }
-
-function desenfocar() {
-    document.body.style.filter = 'blur(2vw)';
-  }
-
-  function quitarDesenfoque() {
-    document.body.style.filter = 'none';
-  }

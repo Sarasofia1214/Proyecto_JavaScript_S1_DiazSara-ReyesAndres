@@ -1,183 +1,381 @@
-body{
+body {
   background-color: black;
-  margin: 0vw;
-  padding: ovw;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* base para rem */
 }
-
-
-
 
 @font-face {
-    font-family: "1";
-    src: url(../storage/fontss/Formula1-Bold.otf);
-  }
-  @font-face {
-    font-family: "2";
-    src: url(../storage/fontss/Formula1-Regular.otf);
-  }
-  @font-face {
-    font-family: "3";
-    src: url(../storage/fontss/Formula1-Wide.otf);
-  }
-
-  header {
-    background-color: #d9d9d9;
-    display: flex;
-    align-items: center;
-    height: 5vw;
-    width: 100%;
-    gap: 8vw;
-    font-family: "3";
-    font-size: 0.9vw;
-    cursor: pointer;
-  }
-  
-
-.logo {
-  width: 10vw;
+  font-family: "1";
+  src: url(../storage/fontss/Formula1-Bold.otf);
+}
+@font-face {
+  font-family: "2";
+  src: url(../storage/fontss/Formula1-Regular.otf);
+}
+@font-face {
+  font-family: "3";
+  src: url(../storage/fontss/Formula1-Wide.otf);
 }
 
+header {
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  width: 100%;
+  gap: 8rem;
+  font-family: "3";
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
 
+.logo {
+  width: 10rem;
+}
 
 .escuderias_container {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 80%;
   height: 90vh;
-  margin-left: 10vw;
-  gap: 1vw;
+  margin-left: 10%;
+  gap: 1rem;
   margin-top: 5vh;
 }
 
-.escuderias_container_1 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
- 
-}
-
-.escuderias_container_2 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-}
-
+.escuderias_container_1,
+.escuderias_container_2,
 .escuderias_container_3 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  
+}
+
+.escuderias_container_3 {
   justify-content: center;
 }
 
 #cuadro {
   position: absolute;
-  width: 80vw;
-  height: 50vw;
+  width: 58%;
+  height: 30vh;
   background-color: #d9d9d9;
-  border-radius: 2vw;
+  border-radius: 1rem;
   display: none;
   justify-content: center;
   align-items: center;
-  font-family: "1";
-  font-size: 2vw;
+  font-family: "2";
+  font-size: 1rem;
   color: black;
   cursor: pointer;
-  top: 3vh;
-  left: 4vw;
+  top: 30vh;
+  left: 30%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-.Nombre{
-  position: absolute; 
+.Nombre,
+.nombre_1,
+.pais,
+.pais_1,
+.modelo,
+.modelo_1,
+.copas,
+.copas_1,
+.entrada,
+.entrada_1 {
+  position: absolute;
   font-family: "2";
-  font-size: 2vw;
+  font-size: 1rem;
   color: black;
-  left: 0vw;
-  top: 0vh
 }
-.nombre_1{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 23vw;
-  top: 0vh
+
+.Nombre {
+  left: 0;
+  top: 0;
 }
-.pais{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 0vw;
-  top: 4vh
+.nombre_1 {
+  left: 11.5rem;
+  top: 0;
 }
-.pais_1{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 7vw;
-  top: 4vh
+.pais {
+  left: 0;
+  top: 4rem;
 }
-.modelo{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 0vw;
-  top: 8vh
+.pais_1 {
+  left: 3.5rem;
+  top: 4rem;
 }
-.modelo_1{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 11vw;
-  top: 8vh
+.modelo {
+  left: 0;
+  top: 8rem;
 }
-.copas{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 0vw;
-  top: 12vh
+.modelo_1 {
+  left: 5.5rem;
+  top: 8rem;
 }
-.copas_1{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 22vw;
-  top: 12vh
+.copas {
+  left: 0;
+  top: 12rem;
 }
-.entrada{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 0vw;
-  top: 16vh
+.copas_1 {
+  left: 11rem;
+  top: 12rem;
 }
-.entrada_1{
-  position: absolute; 
-  font-family: "2";
-  font-size: 2vw;
-  color: black;
-  left: 22vw;
-  top: 16vh
+.entrada {
+  left: 0;
+  top: 16rem;
 }
-.piloto_1{
-  position: absolute; 
-  width: 20vw;
-  height: 25vw;
-  top: 8vh;
-  left: 30vw;
-  border-radius: 2vw;
+.entrada_1 {
+  left: 11rem;
+  top: 16rem;
 }
-.piloto_2{
-  position: absolute; 
-  width: 20vw;
-  height: 25vw;
-  top: 8vh;
-  left: 55vw;
-  border-radius: 2vw;
+
+.piloto_1,
+.piloto_2 {
+  position: absolute;
+  width: 8rem;
+  height: 10rem;
+  top: 8rem;
+  border-radius: 1rem;
+}
+
+.piloto_1 {
+  left: 18rem;
+}
+
+.piloto_2 {
+  left: 28rem;
+}
+
+/* Media Queries para responsive */
+
+/* Tablets (600px a 1024px) */
+@media (max-width: 1024px) {
+  header {
+    height: 4rem;
+    font-size: 0.8rem;
+    gap: 4rem;
+  }
+
+  .logo {
+    width: 8rem;
+  }
+
+  .escuderias_container {
+    width: 90%;
+    margin-left: 5%;
+    gap: 0.75rem;
+    margin-top: 4vh;
+  }
+
+  .escuderias_container_1,
+  .escuderias_container_2,
+  .escuderias_container_3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #cuadro {
+    width: 80%;
+    height: 35vh;
+    font-size: 0.9rem;
+    top: 25vh;
+    left: 10%;
+  }
+
+  .Nombre,
+  .nombre_1,
+  .pais,
+  .pais_1,
+  .modelo,
+  .modelo_1,
+  .copas,
+  .copas_1,
+  .entrada,
+  .entrada_1 {
+    font-size: 0.9rem;
+  }
+
+  .nombre_1 {
+    left: 7rem;
+  }
+  .pais_1 {
+    left: 2.5rem;
+  }
+  .modelo_1 {
+    left: 4rem;
+  }
+  .copas_1 {
+    left: 7rem;
+  }
+  .entrada_1 {
+    left: 7rem;
+  }
+
+  .piloto_1,
+  .piloto_2 {
+    width: 6rem;
+    height: 7.5rem;
+    top: 6rem;
+  }
+  .piloto_1 {
+    left: 12rem;
+  }
+  .piloto_2 {
+    left: 20rem;
+  }
+}
+
+/* Móviles (menos de 600px) */
+@media (max-width: 600px) {
+  header {
+    height: 3rem;
+    font-size: 0.7rem;
+    gap: 2rem;
+  }
+
+  .logo {
+    width: 6rem;
+  }
+
+  .escuderias_container {
+    width: 95%;
+    margin-left: 2.5%;
+    gap: 0.5rem;
+    margin-top: 3vh;
+  }
+
+  .escuderias_container_1,
+  .escuderias_container_2,
+  .escuderias_container_3 {
+    grid-template-columns: 1fr;
+  }
+
+  #cuadro {
+    width: 90%;
+    height: 40vh;
+    font-size: 0.8rem;
+    top: 20vh;
+    left: 5%;
+  }
+
+  .Nombre,
+  .nombre_1,
+  .pais,
+  .pais_1,
+  .modelo,
+  .modelo_1,
+  .copas,
+  .copas_1,
+  .entrada,
+  .entrada_1 {
+    font-size: 0.8rem;
+  }
+
+  .nombre_1 {
+    left: 4rem;
+  }
+  .pais_1 {
+    left: 1.5rem;
+  }
+  .modelo_1 {
+    left: 3rem;
+  }
+  .copas_1 {
+    left: 5rem;
+  }
+  .entrada_1 {
+    left: 5rem;
+  }
+
+  .piloto_1,
+  .piloto_2 {
+    width: 5rem;
+    height: 6rem;
+    top: 5rem;
+  }
+  .piloto_1 {
+    left: 8rem;
+  }
+  .piloto_2 {
+    left: 15rem;
+  }
+}
+
+@media (max-width: 430px) and (min-width: 414px) {
+  header {
+    height: 2.2rem;
+    font-size: 0.3rem;
+    gap: 1.5rem;
+  }
+
+  .logo {
+    width: 2.5rem;
+  }
+
+  .escuderias_container {
+    width: 95%;
+    margin-left: 2.5%;
+    gap: 0.6rem;
+    margin-top: 3.5vh;
+  }
+
+  .escuderias_container_1,
+  .escuderias_container_2,
+  .escuderias_container_3 {
+    grid-template-columns: 1fr;
+  }
+
+  #cuadro {
+    width: 90%;
+    height: 38vh;
+    font-size: 0.85rem;
+    top: 22vh;
+    left: 5%;
+    padding: 0.8rem;
+  }
+
+  .Nombre,
+  .nombre_1,
+  .pais,
+  .pais_1,
+  .modelo,
+  .modelo_1,
+  .copas,
+  .copas_1,
+  .entrada,
+  .entrada_1 {
+    font-size: 0.5rem;
+  }
+
+  .nombre_1 {
+    left: 6.2rem;
+  }
+  .pais_1 {
+    left: 2rem;
+  }
+  .modelo_1 {
+    left: 3rem;
+  }
+  .copas_1 {
+    left: 5.2rem;
+  }
+  .entrada_1 {
+    left: 5.2rem;
+  }
+
+  .piloto_1,
+  .piloto_2 {
+    width: 5.2rem;
+    height: 6.2rem;
+    top: 5.2rem;
+  }
+  .piloto_1 {
+    left: 8.5rem;
+  }
+  .piloto_2 {
+    left: 15.5rem;
+  }
 }
