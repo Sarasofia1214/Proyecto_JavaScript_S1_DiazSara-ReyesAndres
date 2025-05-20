@@ -144,6 +144,7 @@ a{
     align-items: center;
     margin: 10vw;
     border-radius: 6px;
+    
 }
 .container_logos{
     display: flex;
@@ -157,8 +158,8 @@ a{
     margin-left: 9vw;
 }
 .flechas_logo{
-    width: 36vw;
-    margin-right: 2vw;
+    width: 31vw;
+    margin-right: 8vw;
 }
 .piloto2{
     width: 30vw;
@@ -166,20 +167,33 @@ a{
     border-radius: 3.6vw;
 }
 .information_body_container{
-    background-color: tomato;
     margin: 3VW;
     width: 30vw;
 }
 .information_body_container_nombre{
-    background-color: blue;
 }
 .titulo_information{
-    font-family: "2";
+    font-family: "1";
+
+    font-size: 1.7vw;
     
 }
-
-
-
+.texto_information{
+    font-family: "2";
+    font-size: 1.5vw;
+}
+.regresar_container{
+    background-color: red;
+    width: 20vw;
+    font-family: "2";
+    font-size: 2vw;
+    padding: 1vw;
+    margin: 2vw;
+    margin-left: 57vw;
+    border-radius: 2vw;
+    color: white;
+    border: none;
+}
 
 
 
