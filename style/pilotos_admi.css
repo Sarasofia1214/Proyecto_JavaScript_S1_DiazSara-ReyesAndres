@@ -1,0 +1,206 @@
+@font-face {
+    font-family: "1";
+    src: url(../storage/fontss/Formula1-Bold.otf);
+  }
+  @font-face {
+    font-family: "2";
+    src: url(../storage/fontss/Formula1-Regular.otf);
+  }
+  @font-face {
+    font-family: "3";
+    src: url(../storage/fontss/Formula1-Wide.otf);
+  }
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: black;
+}
+header {
+    position: fixed;          
+    top: 0;                  
+    left: 0;
+    width: 100%;             
+    height: 5vw;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    gap: 8vw;
+    font-family: "3";
+    font-size: 0.9vw;
+    cursor: pointer;
+    z-index: 1000;          
+  }
+  
+  .logo {
+    width: 10vw;
+    padding-left: 2vw;
+  }
+.añadirpiloto{
+    background-color: red;
+    width: 20vw;
+    position: fixed;
+    font-family: "2";
+    font-size: 2vw;
+    padding: 1vw;
+    margin-left: 5vw;
+    margin-top: -3vw;
+    border-radius: 2vw;
+    color: white;
+    border: none;
+}
+
+.drivers_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
+    gap: 3vw;
+    margin: 4vw;
+    padding: 4vw;
+    margin-top: 10vw;
+  }
+
+.tarjeta {
+    display: none;
+    flex-direction: row;
+    width: 25vw;
+    height: 40vh;
+    color: white;
+
+
+}
+
+.ladoIzquierdo {
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#img_piloto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ladoDerecho {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-right: 0.1vw solid white;
+}
+
+.nombreBandera {
+    width: 100%;
+    height: 30%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+}
+.banderaLado {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#name_piloto {
+    margin-left: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#img_bandera {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    margin-left: 10%;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    align-items: center;
+    font-size: 120%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.nombre, .modelo, .posicion{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+
+
+.more_information_container{
+    background-color: white;
+    align-items: center;
+    margin: 10vw;
+    border-radius: 6px;
+}
+.container_logos{
+    display: flex;
+    justify-content: space-around;
+}
+.body_information_container{
+    display: flex;
+}
+.logo2025{
+    width: 24vw ;
+    margin-left: 9vw;
+}
+.flechas_logo{
+    width: 36vw;
+    margin-right: 2vw;
+}
+.piloto2{
+    width: 30vw;
+    padding: 3vw;
+    border-radius: 3.6vw;
+}
+.information_body_container{
+    background-color: tomato;
+    margin: 3VW;
+    width: 30vw;
+}
+.information_body_container_nombre{
+    background-color: blue;
+}
+.titulo_information{
+    font-family: "2";
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 430px) {
+    .drivers_container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+  }
+  
+  /* Pantallas pequeñas (móviles) */
+  @media (max-width: 600px) {
+    .drivers_container {
+      grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+  }
+
+  
