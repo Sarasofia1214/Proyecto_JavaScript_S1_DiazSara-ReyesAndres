@@ -17,15 +17,19 @@ body{
     background-color: black;
 }
 header {
+    position: fixed;          
+    top: 0;                  
+    left: 0;
+    width: 100%;             
+    height: 5vw;
     background-color: #d9d9d9;
     display: flex;
     align-items: center;
-    height: 5vw;
-    width: 100%;
     gap: 8vw;
     font-family: "3";
     font-size: 0.9vw;
     cursor: pointer;
+    z-index: 1000;          
   }
   
   .logo {
@@ -35,63 +39,75 @@ header {
 
   .drivers_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 3vw;
     margin: 4vw;
     padding: 4vw;
 }
 
-.card {
-    display: flex;
+.tarjeta {
+    display: none;
     flex-direction: row;
-    background-color: #000; 
+    width: 25vw;
+    height: 40vh;
     color: white;
-    border-radius: 10px;
+
+}
+
+.ladoIzquierdo {
+    width: 60%;
+    height: 100%;
     overflow: hidden;
 }
 
-.card img {
-    width: 35vw;
-    height: auto;
+#img_piloto {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.info_card {
+.ladoDerecho {
+    width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 1vw;
-    flex: 1;
+    border-right: 0.1vw solid white;
 }
 
-.info_card_header {
+.nombreBandera {
+    width: 100%;
+    height: 30%;
+    border: 1px solid white;
     display: flex;
+    flex-direction: row;
+}
+.banderaLado {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    border: 0.1vw solid #d9d9d9;
-    border-left: none;
-    padding: 1vw;
 }
 
-.bandera {
-    width: 2.5vw;
-    min-width: 20px;
-    max-width: 30px;
-    height: auto;
-    margin-right: 1vw;
+#name_piloto {
+    margin-left: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#img_bandera {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    margin-left: 10%;
 }
 
-.info_card_body {
-    text-align: left;
-    padding: 1vw;
+.description {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    align-items: center;
+    font-size: 120%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-.posicion {
-    font-size: 6vw;
-    font-weight: bold;
-    margin-top: 1vw;
-}
-
 
 @media (max-width: 768px) {
     .card {
@@ -126,4 +142,23 @@ a{
 .nombre, .modelo, .posicion{
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.more_information_container{
+    background-color: white;
+    align-items: center;
+    margin: 10vw;
+    border-radius: 6px;
+}
+.container_logos{
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+}
+.logo2025{
+    width: 24vw ;
+}
+.flechas_logo{
+    width: 38vw;
 }
