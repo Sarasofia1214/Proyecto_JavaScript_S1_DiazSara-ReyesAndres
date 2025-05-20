@@ -35,11 +35,10 @@ header {
 
 img.logo {
   width: 10vw;
-  object-fit: none;
+  object-fit: fill;
   margin-left: 1vw;
 
 }
-
 
 
 a{

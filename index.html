@@ -11,13 +11,17 @@
     <source  src="./storage/images/background.mp4" type="video/mp4">
   </video>
 
-    <div class="login_container">
+    <div class="login_container" id="login_container">
       <img class="logo_f1" src="./storage/images/f1_logo.svg" alt="">
       <h2 class="sign">Sign in</h2>
-      <input class="input_user" type="text" placeholder="Usuario">
-      <input class="input_contrasena" type="password" placeholder="Contraseña">
-      <a href="./index/inicio.html"><button class="ingresar">Ingresar</button></a>
+
+      <form id="login_containerr">
+      <input class="input_user" id="input_user" type="text" placeholder="Usuario">
+      <input class="input_contrasena" id="input_contra" type="password" placeholder="Contraseña">
+      <button class="ingresar" type="submit" >Ingresar</button>
+      </form>
     </div>
+    
   </div>
 </body>
 
