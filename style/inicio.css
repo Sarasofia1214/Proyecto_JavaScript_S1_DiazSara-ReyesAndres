@@ -91,7 +91,12 @@ header {
 .cabezas {
   width: 38vw;
 }
-
+.cabezas2 {
+  display: none;
+}
+.cabezas3 {
+  display: none;
+}
 
 .right_image {
   background-color: black;
@@ -114,4 +119,59 @@ a{
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+@media only screen and (max-width: 430px){
+  header {
+    background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  height: 5vw;
+  width: 100%;
+  gap: 4vw;
+  font-family: "3";
+  font-size: 1.3vw;
+  cursor: pointer;
+  }
+
+
+.logo2 {
+  width: 25vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+
+.container_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vw 0;
+}
+
+.f1_text{
+  font-family: "2";
+  padding: 3vw;
+  font-size: 2.5vw;
+  text-align: center;
+  width: 39vw;
+ 
+}
+.f1_text2 {
+  font-family: "2";
+  font-size: 2.5vw;
+  text-align: center;
+  width: 39vw;
+  padding:5vw ;
+}
+.cabezas {
+  width: 38vw;
+  display: none;
+}
+.cabezas2{
+  width: 45vw;
+}
+.cabezas3{
+  width: 45vw;
+}
+
 }
