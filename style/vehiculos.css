@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "1";
+    src: url(../storage/fontss/Formula1-Bold.otf);
+  }
+  @font-face {
+    font-family: "2";
+    src: url(../storage/fontss/Formula1-Regular.otf);
+  }
+  @font-face {
+    font-family: "3";
+    src: url(../storage/fontss/Formula1-Wide.otf);
+  }
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: black;
+}
+
+.header {
+    position: fixed;          
+    top: 0;                  
+    left: 0;
+    width: 100%;             
+    height: 5vw;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    gap: 8vw;
+    font-family: "3";
+    font-size: 0.9vw;
+    cursor: pointer;
+    z-index: 1000;          
+  }
+
+.container_cars{
+    display: flex;
+    flex-direction: column                 ;
+    width: 100%;
+}
+.logo {
+    width: 10vw;
+    padding-left: 2vw;
+  }
+.a{
+    text-decoration: none;
+    color: black;
+}
+.nombre, .modelo, .posicion{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
