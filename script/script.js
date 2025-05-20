@@ -1,6 +1,15 @@
-window.addEventListener('load', () => {
-  const sound = document.getElementById('engine-sound');
-  sound.play().catch(e => {
-    console.log("El sonido no se pudo reproducir automáticamente:", e);
+document.getElementById('login_form').addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    const user = document.getElementById('input_user').value;
+    const password = document.getElementById('input_password').value;
+  
+    if (user === 'Gaia' && password === 'Gaia123') {
+      window.location.href = '../index/inicio.html';
+    } else if (user === 'Malu' && password === 'Malu123') {
+      window.location.href = '../index/inicio_admin.html';
+    } else {
+      console.log('Usuario o contraseña incorrectos');
+    }
   });
-});
+  

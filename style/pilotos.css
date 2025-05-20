@@ -1,0 +1,164 @@
+@font-face {
+    font-family: "1";
+    src: url(../storage/fontss/Formula1-Bold.otf);
+  }
+  @font-face {
+    font-family: "2";
+    src: url(../storage/fontss/Formula1-Regular.otf);
+  }
+  @font-face {
+    font-family: "3";
+    src: url(../storage/fontss/Formula1-Wide.otf);
+  }
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: black;
+}
+header {
+    position: fixed;          
+    top: 0;                  
+    left: 0;
+    width: 100%;             
+    height: 5vw;
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    gap: 8vw;
+    font-family: "3";
+    font-size: 0.9vw;
+    cursor: pointer;
+    z-index: 1000;          
+  }
+  
+  .logo {
+    width: 10vw;
+    padding-left: 2vw;
+  }
+
+  .drivers_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 3vw;
+    margin: 4vw;
+    padding: 4vw;
+}
+
+.tarjeta {
+    display: none;
+    flex-direction: row;
+    width: 25vw;
+    height: 40vh;
+    color: white;
+
+}
+
+.ladoIzquierdo {
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#img_piloto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ladoDerecho {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-right: 0.1vw solid white;
+}
+
+.nombreBandera {
+    width: 100%;
+    height: 30%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+}
+.banderaLado {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#name_piloto {
+    margin-left: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#img_bandera {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    margin-left: 10%;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    align-items: center;
+    font-size: 120%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card img {
+        width: 80%;
+    }
+
+    .info_card {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info_card_header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .posicion {
+        font-size: 10vw;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.nombre, .modelo, .posicion{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.more_information_container{
+    background-color: white;
+    align-items: center;
+    margin: 10vw;
+    border-radius: 6px;
+}
+.container_logos{
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+}
+.logo2025{
+    width: 24vw ;
+}
+.flechas_logo{
+    width: 38vw;
+}

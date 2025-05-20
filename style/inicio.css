@@ -16,6 +16,8 @@ body {
   padding: 0;
   background-color: #282424;
   font-family: "2";
+  overflow: hidden;
+ 
 }
 
 
@@ -27,21 +29,20 @@ header {
   width: 100%;
   gap: 8vw;
   font-family: "3";
-}
-
-.logo {
-  width: 10vw;
-}
-
-header{
   font-size: 0.9vw;
   cursor: pointer;
 }
 
+.logo {
+  width: 10vw;
+  padding-left: 2vw;
+}
+
+
 .main_container {
   display: flex;
   width: 100%;
-  height: calc(100vh - 5vw); 
+  height: 100vh;
 }
 
 
@@ -73,20 +74,29 @@ header{
   padding: 2vw 0;
 }
 
-.f1_text,
+.f1_text{
+  font-family: "2";
+  font-size: 1.2vw;
+  text-align: center;
+  width: 33vw;
+ 
+}
 .f1_text2 {
   font-family: "2";
-  font-size: 0.9vw;
+  font-size: 1.2vw;
   text-align: center;
-  width: 22vw;
-  margin: 1vw 0;
+  width: 39vw;
+  padding-top:1vw ;
 }
-
 .cabezas {
-  width: 15vw;
-  margin: 1vw 0;
+  width: 38vw;
 }
-
+.cabezas2 {
+  display: none;
+}
+.cabezas3 {
+  display: none;
+}
 
 .right_image {
   background-color: black;
@@ -97,11 +107,71 @@ header{
 }
 
 .f1_car {
-  width: 90%;
-  height: auto;
+  width: 80%;
+}
+.car{
+  width: 42vw;
+  height: 50vh;
+}
+a{
+  text-decoration: none;
+  color: #000000;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
-.car{
+@media only screen and (max-width: 430px){
+  header {
+    background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  height: 5vw;
   width: 100%;
-  height: 100%;
+  gap: 4vw;
+  font-family: "3";
+  font-size: 1.3vw;
+  cursor: pointer;
+  }
+
+
+.logo2 {
+  width: 25vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+
+.container_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vw 0;
+}
+
+.f1_text{
+  font-family: "2";
+  padding: 3vw;
+  font-size: 2.5vw;
+  text-align: center;
+  width: 39vw;
+ 
+}
+.f1_text2 {
+  font-family: "2";
+  font-size: 2.5vw;
+  text-align: center;
+  width: 39vw;
+  padding:5vw ;
+}
+.cabezas {
+  width: 38vw;
+  display: none;
+}
+.cabezas2{
+  width: 45vw;
+}
+.cabezas3{
+  width: 45vw;
+}
+
 }

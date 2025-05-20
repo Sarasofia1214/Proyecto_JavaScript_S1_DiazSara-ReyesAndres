@@ -36,6 +36,7 @@ video {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 25vw;
   padding: 2vw;
   gap: 1.5vw;
@@ -59,15 +60,20 @@ h2 {
   font-size: 2vw;
   margin: 0;
 }
-
+input{
+  margin-top: 1vw;
+display: flex;
+flex-direction: column;
+padding: 3vw;
+}
 .input_user,
 .input_contrasena {
-  width: 100%;
+  width: 90%;
   background-color: #0D101C;
   border: 0.15vw solid #1476FF;
   border-radius: 0.5vw;
   padding: 0.8vw;
-  color: white;
+  color: #ffffff;
   font-family: "2";
   font-size: 1vw;
 }
@@ -82,6 +88,7 @@ h2 {
   font-family: "1";
   font-size: 1.2vw;
   cursor: pointer;
+  margin-top: 2vw;
 }
 
 .ingresar:hover {
