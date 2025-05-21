@@ -8,21 +8,18 @@ async function fetchEquipos() {
 }
 
 function renderEquipos(datas) {
-  const container = document.getElementById("cuadro");
+
+  const container = document.getElementById("nombre_1");
+ 
   const equipos = datas[0]["equipos"]
-
-
-  equipos.forEach(equipo=> {
-
-      const clone = container.cloneNode(true);
-      clone.style.display = "flex"
-      clone.querySelector(".nombre_1").textContent = equipo.nombreCompleto;
-
-      container.appendChild(clone)
-
-      console.log(equipo.nombreCompleto);
+  for (let i = 0; i<equipos.length;i++){
+    let equipo = equipos
+    container.innerHTML += `${equipos[i]["nombreCompleto"]}`
+    
+      
   
-  });
+
+  }
   
 }
 
