@@ -53,7 +53,6 @@ header {
     margin-top: 100px;
   }
   
-  /* Contenedor de pilotos */
   .drivers_container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -63,7 +62,7 @@ header {
     margin-top: 80px;
   }
   
-  /* Tarjeta de piloto */
+
   .tarjeta {
     display: none;
     flex-direction: row;

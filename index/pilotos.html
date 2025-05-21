@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilotos Admin Formula Uno</title>
+    <title>Pilotos Formula Uno</title>
     <link rel="stylesheet" href="../style/pilotos.css">
 </head>
 <body>
- <!-- Tarjeta de información detallada -->
+
  <div class="more_information_container" id="tarjeta_info">
     <div class="container_logos">
         <img class="logo2025" src="../storage/images/logo2025.svg" alt="Logo 2025">
@@ -46,87 +46,6 @@
     <a href="./comparar.html"><p class="comparar">Comparar</p></a>
 </header>
 
-<button class="añadirpiloto" id="btn-anadir">Añadir piloto</button>
-
-<!-- Formulario para añadir piloto -->
-<div class="formulario-piloto" id="form-piloto">
-    <h2>Añadir Nuevo Piloto</h2>
-    <img class="flechas" src="../storage/images/flechas.svg" alt="Flechas">
-    
-    <form id="piloto-form">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="vehiculo">Vehículo:</label>
-                <input type="text" id="vehiculo" required>
-            </div>
-        </div>
-        
-        <div class="form-row">
-            <div class="form-group">
-                <label for="equipo">Equipo:</label>
-                <input type="text" id="equipo" required>
-            </div>
-            <div class="form-group">
-                <label for="podiums">Podiums:</label>
-                <input type="number" id="podiums" min="0" required>
-            </div>
-        </div>
-        
-        <div class="form-row">
-            <div class="form-group">
-                <label for="rot">Posición:</label>
-                <select id="rot" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="pais">País:</label>
-                <input type="text" id="pais" required>
-            </div>
-        </div>
-        
-        <div class="form-row">
-            <div class="form-group">
-                <label for="imagen">URL Imagen Piloto:</label>
-                <input type="url" id="imagen" placeholder="https://ejemplo.com/imagen.jpg" required>
-            </div>
-            <div class="form-group">
-                <label for="bandera">URL Bandera País:</label>
-                <input type="url" id="bandera" placeholder="https://ejemplo.com/bandera.png" required>
-            </div>
-        </div>
-        
-        <div class="form-actions">
-            <button type="button" class="btn btn-cancel" id="btn-cancelar">Cancelar</button>
-            <button type="submit" class="btn btn-submit">Añadir</button>
-        </div>
-    </form>
-</div>
-
-<!-- Plantilla de tarjeta oculta que se usa como modelo -->
 <div class="tarjeta" id="template" style="display: none;">
     <div class="ladoIzquierdo">
         <img src="" alt="Imagen del piloto" id="img_piloto">
@@ -145,135 +64,8 @@
     </div>
 </div>
 
-<!-- Contenedor donde se mostrarán las tarjetas de los pilotos -->
 <div class="drivers_container" id="container_pilotos"></div>
 
     <script src="../script/pilotos.js"></script>
 </body>
-<script>
-    // Manejadores para mostrar/ocultar el formulario
-    document.getElementById('btn-anadir').addEventListener('click', function() {
-        document.getElementById('form-piloto').style.display = 'block';
-    });
-    
-    document.getElementById('btn-cancelar').addEventListener('click', function() {
-        document.getElementById('form-piloto').style.display = 'none';
-        document.getElementById('piloto-form').reset();
-    });
-    
-    // Manejador para el envío del formulario
-    document.getElementById('piloto-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Obtener los valores del formulario
-        const nombre = document.getElementById('nombre').value;
-        const vehiculo = document.getElementById('vehiculo').value;
-        const equipo = document.getElementById('equipo').value;
-        const podiums = document.getElementById('podiums').value;
-        const posicion = document.getElementById('rot').value;
-        const pais = document.getElementById('pais').value;
-        const imagenUrl = document.getElementById('imagen').value;
-        const banderaUrl = document.getElementById('bandera').value;
-        
-        // Crear una nueva tarjeta de piloto
-        crearTarjetaPiloto(nombre, equipo, posicion, imagenUrl, banderaUrl, vehiculo, podiums);
-        
-        // Ocultar y resetear el formulario
-        document.getElementById('form-piloto').style.display = 'none';
-        this.reset();
-    });
-    
-    // Función para crear una nueva tarjeta de piloto
-    function crearTarjetaPiloto(nombre, equipo, posicion, imagenUrl, banderaUrl, vehiculo, podiums) {
-        // Clonar la plantilla
-        const template = document.getElementById('template');
-        const nuevaTarjeta = template.cloneNode(true);
-        nuevaTarjeta.id = ''; // Quitar el ID para evitar duplicados
-        nuevaTarjeta.style.display = 'flex'; // Hacer visible la tarjeta
-        
-        // Establecer los valores
-        nuevaTarjeta.querySelector('#img_piloto').src = imagenUrl;
-        nuevaTarjeta.querySelector('#img_bandera').src = banderaUrl;
-        nuevaTarjeta.querySelector('#name_piloto').textContent = nombre;
-        nuevaTarjeta.querySelector('#team_piloto').textContent = equipo;
-        nuevaTarjeta.querySelector('#posicion').textContent = '#' + posicion;
-        
-        // Almacenar datos adicionales para la tarjeta de información
-        nuevaTarjeta.dataset.vehiculo = vehiculo;
-        nuevaTarjeta.dataset.podiums = podiums;
-        
-        // Añadir evento para mostrar la tarjeta de información
-        nuevaTarjeta.addEventListener('click', function() {
-            mostrarInformacionPiloto(nombre, equipo, vehiculo, podiums, imagenUrl);
-        });
-        
-        // Añadir la nueva tarjeta al contenedor
-        document.getElementById('container_pilotos').appendChild(nuevaTarjeta);
-    }
-    
-    // Función para mostrar la tarjeta de información detallada
-    function mostrarInformacionPiloto(nombre, equipo, vehiculo, podiums, imagenUrl) {
-        document.getElementById('info_nombre').textContent = nombre;
-        document.getElementById('info_equipo').textContent = equipo;
-        document.getElementById('info_vehiculo').textContent = vehiculo;
-        document.getElementById('info_podiums').textContent = podiums;
-        document.getElementById('imagen_piloto_info').src = imagenUrl;
-        
-        document.getElementById('tarjeta_info').style.display = 'block';
-    }
-    
-    // Función para ocultar la tarjeta de información
-    function ocultarTarjeta() {
-        document.getElementById('tarjeta_info').style.display = 'none';
-    }
-    
-    // Datos de ejemplo para mostrar al cargar la página
-    const pilotosEjemplo = [
-        {
-            nombre: "Lewis Hamilton",
-            equipo: "Mercedes",
-            vehiculo: "W14",
-            podiums: "195",
-            posicion: "1",
-            pais: "Reino Unido",
-            imagen: "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2024Drivers/hamilton.png",
-            bandera: "https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/great-britain-flag.png"
-        },
-        {
-            nombre: "Max Verstappen",
-            equipo: "Red Bull Racing",
-            vehiculo: "RB20",
-            podiums: "105",
-            posicion: "2",
-            pais: "Países Bajos",
-            imagen: "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2024Drivers/verstappen.png",
-            bandera: "https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/netherlands-flag.png"
-        },
-        {
-            nombre: "Charles Leclerc",
-            equipo: "Ferrari",
-            vehiculo: "SF-24",
-            podiums: "28",
-            posicion: "3",
-            pais: "Mónaco",
-            imagen: "https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2024Drivers/leclerc.png",
-            bandera: "https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/monaco-flag.png"
-        }
-    ];
-    
-    // Cargar pilotos de ejemplo
-    window.onload = function() {
-        pilotosEjemplo.forEach(piloto => {
-            crearTarjetaPiloto(
-                piloto.nombre,
-                piloto.equipo,
-                piloto.posicion,
-                piloto.imagen,
-                piloto.bandera,
-                piloto.vehiculo,
-                piloto.podiums
-            );
-        });
-    };
-</script>
 </html>
