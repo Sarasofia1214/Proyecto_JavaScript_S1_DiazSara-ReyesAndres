@@ -62,7 +62,7 @@ header {
   position: fixed;
   width: 58%;
   max-width: 800px;
-  min-height: 30vh;
+  min-height: 40vh;
   background-color: #ffffff;
   border-radius: 1rem;
   display: none;
@@ -93,17 +93,84 @@ header {
   color: black;
 }
 
-.Nombre { left: 1rem; top: 1rem; }
-.nombre_1 { left: 12.5rem; top: 1rem; }
-.pais { left: 1rem; top: 4rem; }
-.pais_1 { left: 4.5rem; top: 4rem; }
-.modelo { left: 1rem; top: 8rem; }
-.modelo_1 { left: 6.5rem; top: 8rem; }
-.copas { left: 1rem; top: 12rem; }
-.copas_1 { left: 12rem; top: 12rem; }
-.entrada { left: 1rem; top: 16rem; }
-.entrada_1 { left: 12rem; top: 16rem; }
+.nombre{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 
+}
+.pais{
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+}
+.modelo{
+  position: absolute;
+  top: 7rem;
+  left: 1rem;
+}
+.copas{
+  position: absolute;
+  top: 10rem;
+  left: 1rem;
+}
+.entrada_1{
+  position: absolute;
+  top: 13rem;
+  left: 1rem;
+}
+.logoe{
+  position: absolute;
+  top: 20rem;
+  left: 1rem;
+}
+.modelojava{
+  position: absolute;
+  top: 7rem;
+  left: 6rem;
+}
+.copasjava{
+  position: absolute;
+  top: 10rem;
+  left: 6rem;
+}
+.pilotos{
+  position: absolute;
+  top: 16rem;
+  left: 1rem;
+}
+.entradajava{
+  position: absolute;
+  top: 13rem;
+  left: 12rem;
+}
+.pilotosjava{
+  position: absolute;
+  top: 16rem;
+  left: 6rem;
+}
+.nombrecompletojava{
+  position: absolute;
+  top: 1rem;
+  left: 7rem;
+}
+.paisjava{
+  position: absolute;
+  top: 4rem;
+  left: 8rem;
+}
+.logojava{
+  position: absolute;
+  top: 19rem;
+  left: 6rem;
+  width: 14rem;
+}
+.banderajava{
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  width: 2rem;
+}
 /* Driver Images */
 .piloto_1,
 .piloto_2 {

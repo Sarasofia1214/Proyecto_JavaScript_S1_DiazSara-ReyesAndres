@@ -13,8 +13,17 @@ function renderEquipos(datas,id) {
   const container = document.getElementById("nombre_1");
  
   const equipos = datas[0]["equipos"][id]["nombre"];
-  container.innerHTML = `${equipos} ${datas[0]["equipos"][id]["pais"]} ${datas[0]["equipos"][id]["motor"]}  ${datas[0]["equipos"][id]["modelo"]} ${datas[0]["equipos"][id]["logoImage"]}` 
-                        
+  container.innerHTML = 
+  `<p class="nombrecompletojava">${equipos} ${datas[0]["equipos"][id]["nombreCompleto"]}</p>
+  <p class="paisjava">${datas[0]["equipos"][id]["pais"]}</p>
+  <img src="${datas[0]["equipos"][id]["logoImage"]}" alt="logo" class="logojava"> 
+  <img src="${datas[0]["equipos"][id]["bandera"]}" alt="bandera" class="banderajava">
+
+  <p class="modelojava">   ${datas[0]["equipos"][id]["modelo"]}  </p>
+  <p class="copasjava">${datas[0]["equipos"][id]["copas"]} </p>
+  <p class="entradajava"> ${datas[0]["equipos"][id]["entradaEquipo"]}</p>
+    <p class="pilotosjava"> ${datas[0]["equipos"][id]["pilotos"]} </p>`
+ 
   
 }
 
