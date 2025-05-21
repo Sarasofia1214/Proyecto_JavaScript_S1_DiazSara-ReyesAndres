@@ -443,7 +443,6 @@ a {
   box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.1);
 }
 
-/* Estilo para las etiquetas */
 #form-editar label {
   display: block;
   margin-bottom: 5px;
@@ -453,7 +452,7 @@ a {
   font-size: 0.9rem;
 }
 
-/* Responsividad */
+
 @media screen and (max-width: 768px) {
   #form-editar {
     width: 95%;
