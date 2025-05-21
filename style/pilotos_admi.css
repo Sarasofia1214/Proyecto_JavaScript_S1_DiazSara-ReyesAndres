@@ -363,7 +363,112 @@ a {
   font-weight: bold;
   cursor: pointer;
 }
+/* Estilos para el formulario de edición */
+#form-editar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  max-width: 600px;
+  width: 90%;
+}
 
+#form-editar h2 {
+  color: #333;
+  font-family: "1", Arial, sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#form-editar h2:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #e10600, #000000);
+  margin: 10px auto;
+}
+
+/* Overlay de fondo oscuro cuando el formulario está abierto */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+/* Estilo para los botones del formulario de edición */
+#form-editar .btn-submit {
+  background-color: #e10600;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+#form-editar .btn-submit:hover {
+  background-color: #b80000;
+}
+
+#form-editar .btn-cancel {
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+#form-editar .btn-cancel:hover {
+  background-color: #000;
+}
+
+/* Estilo para los inputs y selects */
+#form-editar input,
+#form-editar select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: "2", Arial, sans-serif;
+  transition: border-color 0.3s;
+}
+
+#form-editar input:focus,
+#form-editar select:focus {
+  border-color: #e10600;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.1);
+}
+
+/* Estilo para las etiquetas */
+#form-editar label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: "3", Arial, sans-serif;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  #form-editar {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  #form-editar .form-row {
+    flex-direction: column;
+  }
+  
+  #form-editar .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
 @media screen and (max-width: 768px) {
   header {
     height: auto;
