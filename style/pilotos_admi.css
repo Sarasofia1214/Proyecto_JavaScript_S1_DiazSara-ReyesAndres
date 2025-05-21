@@ -11,7 +11,6 @@
   src: url(../storage/fontss/Formula1-Wide.otf);
 }
 
-/* Estilos generales */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,36 +24,30 @@ body {
   font-family: "2", Arial, sans-serif;
 }
 
-/* Header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   background-color: #d9d9d9;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  padding: 10px 20px;
+  height: 5vw;
+  width: 100%;
+  gap: 8vw;
   font-family: "3";
-  font-size: 16px;
+  font-size: 0.9vw;
   cursor: pointer;
-  z-index: 1000;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .logo {
-  width: 120px;
-  max-width: 100%;
+  width: 10vw;
+  padding-left: 2vw;
 }
+
 
 header a {
   margin: 0 10px;
   white-space: nowrap;
 }
 
-/* Botón añadir piloto */
 .añadirpiloto {
   background-color: red;
   max-width: 300px;
@@ -71,7 +64,6 @@ header a {
   margin-top: 100px;
 }
 
-/* Contenedor de pilotos */
 .drivers_container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -234,7 +226,11 @@ a {
   color: #000;
   font-family: "2";
 }
-
+.botones{
+  display: flex;
+  width: 18vw;
+  justify-content: space-between;
+}
 .regresar_container {
   padding: 10px 20px;
   background-color: #e30000;
@@ -247,6 +243,28 @@ a {
   transition: background-color 0.3s ease;
 }
 
+.editar_container{
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "2";
+  transition: background-color 0.3s ease;
+}
+.eliminar_container {
+  padding: 10px 20px;
+  background-color: #e30000;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "2";
+  transition: background-color 0.3s ease;
+}
 .regresar_container:hover {
   background-color: #b80000;
 }

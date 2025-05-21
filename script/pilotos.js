@@ -47,7 +47,7 @@ function mostrarInformacion(piloto, equipo) {
   imgInfo.src = piloto.foto;
   nombreInfo.textContent = piloto.nombre;
   equipoInfo.textContent = piloto.escuderia;
-  vehiculoInfo.textContent = piloto.rol;
+  vehiculoInfo.textContent = piloto.modelo;
   podiumsInfo.textContent = piloto.Podiums;
 
   tarjetaInfo.style.display = 'flex';
