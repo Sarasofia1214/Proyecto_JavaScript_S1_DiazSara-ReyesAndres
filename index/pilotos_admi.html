@@ -1,82 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PilotosAdmi formula uno</title>
+    <title>Pilotos Admin Formula Uno</title>
     <link rel="stylesheet" href="../style/pilotos_admi.css">
-    
 </head>
 <body>
- 
-    <div class="more_information_container">
+
+    <div class="more_information_container" id="tarjeta_info">
         <div class="container_logos">
-            <img class="logo2025" src="../storage/images/logo2025.svg" alt="">
-            <img class="flechas_logo" src="../storage/images/flechas.svg" alt="">
+            <img class="logo2025" src="../storage/images/logo2025.svg" alt="Logo 2025">
+            <img class="flechas_logo" src="../storage/images/flechas.svg" alt="Flechas">
         </div>
         <div class="body_information_container">
-            <img class="piloto2" src="../storage/images/piloto.svg" alt="">
+            <img class="piloto2" src="" alt="Imagen del piloto" id="imagen_piloto_info">
             <div class="information_body_container">
                 <div class="information_body_container_nombre">
                     <p class="titulo_information">Nombre</p>
-                    <p class="texto_information">Charles Leclerc</p>
+                    <p class="texto_information" id="info_nombre">Charles Leclerc</p>
                 </div>
-
                 <div class="information_body_container_equipo">
                     <p class="titulo_information">Equipo</p>
-                    <p class="texto_information">Ferrari</p>
+                    <p class="texto_information" id="info_equipo">Ferrari</p>
                 </div>
-
-
                 <div class="information_body_container_vehiculo">
-                    <p class="titulo_information">Vehiculo</p>
-                    <p class="texto_information">F2008</p>
+                    <p class="titulo_information">Vehículo</p>
+                    <p class="texto_information" id="info_vehiculo">F2008</p>
                 </div>
-
                 <div class="information_body_container_podiums">
                     <p class="titulo_information">Podiums</p>
-                    <p class="texto_information">12</p>
+                    <p class="texto_information" id="info_podiums">12</p>
                 </div>
             </div>
-            
         </div>
-        <button class="regresar_container">Regresar</button>
+        <button class="regresar_container" onclick="ocultarTarjeta()">Regresar</button>
     </div>
+    
+   
     <header>
-        <img class="logo" src="../storage/images/formula-1-logo-png_seeklogo-330361-removebg-preview 5.svg" alt="">
-        <a href="./escuderias.html"><p class="escuderias">Escuderias</p></a>
-        <a href="./vehiculo.html"><p class="vehiculos">Vehículos</p></a>
-        <a href="./pilotos.html"><p class="pilotos">Pilotos</p></a>
-        <a href="./circuitos.html"><p class="circuitos">Circuitos</p></a>
-        <a href="./comparar.html"><p class="comparar">Comparar</p></a>
-    </header><!-- 
+        <img class="logo" src="../storage/images/formula-1-logo-png_seeklogo-330361-removebg-preview 5.svg" alt="Logo F1">
+        <nav>
+            <a href="./escuderias.html"><p class="escuderias">Escuderias</p></a>
+            <a href="./vehiculo.html"><p class="vehiculos">Vehículos</p></a>
+            <a href="./pilotos.html"><p class="pilotos">Pilotos</p></a>
+            <a href="./circuitos.html"><p class="circuitos">Circuitos</p></a>
+            <a href="./comparar.html"><p class="comparar">Comparar</p></a>
+        </nav>
+    </header>
+    
+    
     <button class="añadirpiloto">Añadir piloto</button>
+    
+    <!-- Template de tarjeta de piloto -->
     <div class="tarjeta" id="template">
         <div class="ladoIzquierdo">
-            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2025Drivers/hadjar" alt="" id="img_piloto">
+            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2025Drivers/hadjar" alt="Imagen del piloto" id="img_piloto">
         </div>
         <div class="ladoDerecho">
-                <div class="nombreBandera">
-                    <div class="banderaLado">
-                        <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/new-zealand-flag.png" alt="" id="img_bandera">
-                    </div>
-                    <p id="name_piloto">Nombre Piloto</p>
+            <div class="nombreBandera">
+                <div class="banderaLado">
+                    <img src="https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/new-zealand-flag.png" alt="Bandera" id="img_bandera">
                 </div>
-                <div class="description">
-                    <p>Escuderia</p>
-                    <h1 id="posicion">#</h1>
-                </div>
-
+                <p id="name_piloto">Nombre Piloto</p>
+            </div>
+            <div class="description">
+                <p>Escuderia</p>
+                <h1 id="posicion">#</h1>
+            </div>
         </div>
     </div>
 
-    <div>
-        
-    </div>
-
-    <div class="drivers_container" id="container_pilotos">
-    </div>
-  -->
+    <!-- Contenedor principal de pilotos -->
+    <div class="drivers_container" id="container_pilotos"></div>
+ 
+    <!-- Scripts -->
+    <script src="../script/pilotos_admi.js"></script>
 </body>
-<script src="../script/pilotos_admi.js"></script>
 </html>
