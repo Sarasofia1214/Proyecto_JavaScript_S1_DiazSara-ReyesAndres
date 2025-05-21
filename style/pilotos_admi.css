@@ -251,6 +251,101 @@ a {
   background-color: #b80000;
 }
 
+
+.formulario-piloto {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: none; /* Inicialmente oculto */
+}
+
+.formulario-piloto h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+.formulario-piloto h2:after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #e10600, #000000);
+  margin: 8px auto;
+}
+
+.formulario-piloto .flechas {
+  display: block;
+  width: 120px;
+  margin: 10px auto;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  width: 48%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-cancel {
+  background-color: #333;
+  color: white;
+}
+
+.btn-submit {
+  background-color: #e10600;
+  color: white;
+}
+
+/* Botón Añadir Piloto */
+.añadirpiloto {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #e10600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   header {
     height: auto;

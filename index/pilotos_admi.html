@@ -74,7 +74,105 @@
     <!-- Contenedor principal de pilotos -->
     <div class="drivers_container" id="container_pilotos"></div>
  
+
+<!-------->
+
+    <!-- Formulario para añadir piloto -->
+    <div class="formulario-piloto" id="form-piloto">
+        <h2>Añadir Nuevo Piloto</h2>
+        <img class="flechas" src="../storage/images/flechas.svg" alt="Flechas">
+        
+        <form id="piloto-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehiculo">Vehículo:</label>
+                    <input type="text" id="vehiculo" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="equipo">Equipo:</label>
+                    <input type="text" id="equipo" required>
+                </div>
+                <div class="form-group">
+                    <label for="podiums">Podiums:</label>
+                    <input type="number" id="podiums" min="0" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="rot">Posición:</label>
+                    <select id="rot" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="imagen">URL Imagen Piloto:</label>
+                    <input type="url" id="imagen" placeholder="https://ejemplo.com/imagen.jpg" required>
+                </div>
+                <div class="form-group">
+                    <label for="bandera">URL Bandera País:</label>
+                    <input type="url" id="bandera" placeholder="https://ejemplo.com/bandera.png" required>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn btn-cancel" id="btn-cancelar">Cancelar</button>
+                <button type="submit" class="btn btn-submit">Añadir</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Plantilla de tarjeta oculta que se usa como modelo -->
+    <div class="tarjeta" id="template" style="display: none;">
+        <div class="ladoIzquierdo">
+            <img src="" alt="Imagen del piloto" id="img_piloto">
+        </div>
+        <div class="ladoDerecho">
+            <div class="nombreBandera">
+                <div class="banderaLado">
+                    <img src="" alt="Bandera" id="img_bandera">
+                </div>
+                <p id="name_piloto">Nombre Piloto</p>
+            </div>
+            <div class="description">
+                <p id="team_piloto">Escuderia</p>
+                <h1 id="posicion">#</h1>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="../script/pilotos_admi.js"></script>
-</body>
-</html>
