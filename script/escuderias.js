@@ -1,29 +1,22 @@
 
-async function fetchEquipos() {
+async function fetchEquipos(idd) {
   let response = await fetch("https://682a64c2ab2b5004cb3698d4.mockapi.io/formulaone/formula")
   let data = await response.json()
   console.log(data)
-  renderEquipos(data) // solo pasamos el array de escuderías
-  
+  renderEquipos(data,idd)
 }
 
-function renderEquipos(datas) {
+function renderEquipos(datas,id) {
+  console.log(id)
+  console.log(datas)
 
   const container = document.getElementById("nombre_1");
  
-  const equipos = datas[0]["equipos"]
-  for (let i = 0; i<equipos.length;i++){
-    let equipo = equipos
-    container.innerHTML += `${equipos[i]["nombreCompleto"]}`
-    
-      
-  
-
-  }
+  const equipos = datas[0]["equipos"][id]["nombre"];
+  container.innerHTML = `${equipos}` 
   
 }
 
-fetchEquipos()
 
 
 
@@ -32,10 +25,10 @@ fetchEquipos()
 
 
 
-function mostrarEscuderias() {
-    
-    document.getElementById("cuadro").style.display = "flex"
-    ;
+function mostrarEscuderias(elemento) {
+  const idd = elemento.getAttribute("data-id")
+  document.getElementById("cuadro").style.display = "flex"
+  fetchEquipos(idd)
 }
 
 function ocultarEscuderias() {
