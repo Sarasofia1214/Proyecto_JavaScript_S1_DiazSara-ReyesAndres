@@ -13,7 +13,8 @@ function renderEquipos(datas,id) {
   const container = document.getElementById("nombre_1");
  
   const equipos = datas[0]["equipos"][id]["nombre"];
-  container.innerHTML = `${equipos}` 
+  container.innerHTML = `${equipos} ${datas[0]["equipos"][id]["pais"]} ${datas[0]["equipos"][id]["motor"]}  ${datas[0]["equipos"][id]["modelo"]} ${datas[0]["equipos"][id]["logoImage"]}` 
+                        
   
 }
 
