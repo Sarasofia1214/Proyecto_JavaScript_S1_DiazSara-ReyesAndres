@@ -164,14 +164,16 @@ a{
   padding:5vw ;
 }
 .cabezas {
-  width: 38vw;
+
   display: none;
 }
 .cabezas2{
   width: 45vw;
+  display: flex;
 }
 .cabezas3{
   width: 45vw;
+  display: flex;
 }
 
 }

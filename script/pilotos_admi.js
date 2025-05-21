@@ -10,19 +10,18 @@ const equipoInfo = document.getElementById('info_equipo');
 const vehiculoInfo = document.getElementById('info_vehiculo');
 const podiumsInfo = document.getElementById('info_podiums');
 
-// Botones en la tarjeta de información
+
 const btnEliminar = tarjetaInfo.querySelector('.eliminar_container');
 const btnEditar = tarjetaInfo.querySelector('.editar_container');
 
-// Variable para almacenar el piloto seleccionado actualmente
+
 let pilotoActual = null;
 let equipoActual = null;
 let idEquipoActual = null;
 let idPilotoActual = null;
 
-// Cargar pilotos desde la API
 function cargarPilotos() {
-  containerPilotos.innerHTML = ''; // Limpiar contenedor antes de cargar
+  containerPilotos.innerHTML = ''; 
   
   fetch(API_URL)
     .then(res => res.json())
@@ -37,7 +36,7 @@ function cargarPilotos() {
             tarjeta.removeAttribute('id'); 
             tarjeta.style.display = 'flex';
             
-            // Asignar atributos data para almacenar IDs
+     
             tarjeta.dataset.equipoId = equipoId;
             tarjeta.dataset.pilotoId = piloto.id;
             
@@ -100,38 +99,63 @@ btnEliminar.addEventListener('click', function() {
   }
 });
 
-// Función para eliminar un piloto
+// Función para eliminar un piloto - VERSIÓN CORREGIDA
 function eliminarPiloto(equipoId, pilotoId) {
+  // Primero verificamos que los IDs son válidos
+  if (!equipoId || !pilotoId) {
+    alert('Error: ID de equipo o piloto no válido');
+    return;
+  }
+
+  // Obtener la información actual del equipo
   fetch(`${API_URL}/${equipoId}`)
-    .then(res => res.json())
-    .then(equipo => {
-      if (equipo && equipo.pilotos) {
-        // Filtrar el piloto que queremos eliminar
-        const pilotos = equipo.pilotos.filter(p => p.id != pilotoId);
-        
-        // Actualizar la lista de pilotos en el equipo
-        return fetch(`${API_URL}/${equipoId}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...equipo,
-            pilotos: pilotos
-          })
-        });
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('No se pudo obtener los datos del equipo');
       }
+      return res.json();
+    })
+    .then(equipo => {
+      if (!equipo || !Array.isArray(equipo.pilotos)) {
+        throw new Error('Formato de equipo incorrecto');
+      }
+      
+      // Comprobar si el piloto existe en el equipo
+      const pilotoIndex = equipo.pilotos.findIndex(p => p.id == pilotoId);
+      
+      if (pilotoIndex === -1) {
+        throw new Error('Piloto no encontrado en este equipo');
+      }
+      
+      // Crear una copia de la lista de pilotos sin el piloto a eliminar
+      const pilotos = equipo.pilotos.filter(p => p.id != pilotoId);
+      
+      // Actualizar la lista de pilotos en el equipo
+      return fetch(`${API_URL}/${equipoId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...equipo,
+          pilotos: pilotos
+        })
+      });
     })
     .then(response => {
-      if (response && response.ok) {
-        ocultarTarjeta();
-        cargarPilotos(); // Recargar la lista de pilotos
-        alert('Piloto eliminado correctamente');
+      if (!response.ok) {
+        throw new Error('Error al actualizar el equipo');
       }
+      return response.json();
+    })
+    .then(data => {
+      ocultarTarjeta();
+      cargarPilotos(); // Recargar la lista de pilotos
+      alert('Piloto eliminado correctamente');
     })
     .catch(err => {
       console.error('Error al eliminar piloto:', err);
-      alert('Hubo un error al eliminar el piloto');
+      alert(`Error al eliminar el piloto: ${err.message}`);
     });
 }
 
