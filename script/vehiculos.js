@@ -2,7 +2,7 @@ function mostrarDetalle(id) {
   fetch(`https://682a64c2ab2b5004cb3698d4.mockapi.io/formulaone/formula/${id}`)
     .then(res => res.json())
     .then(data => {
-      // Llenar contenido del lado izquierdo
+
       document.getElementById("ladoIzquierdo").innerHTML = `
         <p><strong>Equipo:</strong><br> ${data.equipo}</p>
         <p><strong>Modelo:</strong> ${data.modelo}<br><strong>Motor:</strong> ${data.motor}</p>
@@ -10,7 +10,7 @@ function mostrarDetalle(id) {
         <p><strong>Velocidad máx:</strong><br> ${data.velocidadMax}</p>
       `;
 
-      // Llenar contenido del lado derecho
+   
       document.getElementById("ladoDerecho").innerHTML = `
         <p><strong style="color:red">Pilotos:</strong><br> ${data.pilotos}</p>
         <p><strong style="color:red">Tipo de conducción:</strong> ${data.tipoConduccion}</p>
@@ -21,10 +21,10 @@ function mostrarDetalle(id) {
            seco: ${data.desgasteSeco}, lluvioso: ${data.desgasteLluvia}, extremo: ${data.desgasteExtremo}</p>
       `;
 
-      // Imagen
+
       document.getElementById("imagenAuto").src = data.imagen;
 
-      // Mostrar contenedor
+   
       document.getElementById("infoDetalle").style.display = "block";
     })
     .catch(error => {

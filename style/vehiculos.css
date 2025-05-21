@@ -71,22 +71,22 @@ img:hover {
 .info-detallada {
   background-color: #fff;
   padding: 20px;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 80%;
+  position: fixed;
+  margin-top: 13vw;
+  left: 20vw;
+  width: 60%;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0,0,0,0.7);
   z-index: 100;
 }
 
 .lado-izquierdo {
-  background: linear-gradient(to bottom, #c00, #800);
-  padding: 15px;
-  border-radius: 15px;
+  background-image: url(../storage/images/fondo_info_detallada.svg);
+  padding: 1vw;
+  border-radius: 3vw;
   color: white;
   width: 30%;
-  float: left;
+
 }
 
 .lado-derecho {
