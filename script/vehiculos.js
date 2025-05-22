@@ -1,38 +1,40 @@
-function mostrarDetalle(id) {
-  fetch(`https://682a64c2ab2b5004cb3698d4.mockapi.io/formulaone/formula/${id}`)
-    .then(res => res.json())
-    .then(data => {
+const apiURL = 'https://682a64c2ab2b5004cb3698d4.mockapi.io/formulaone/formula';
+const imagenes = document.querySelectorAll('#container_cars_id img');
 
-      document.getElementById("ladoIzquierdo").innerHTML = `
-        <p><strong>Equipo:</strong><br> ${data.equipo}</p>
-        <p><strong>Modelo:</strong> ${data.modelo}<br><strong>Motor:</strong> ${data.motor}</p>
-        <p><strong>Aceleración:</strong> ${data.aceleracion}</p>
-        <p><strong>Velocidad máx:</strong><br> ${data.velocidadMax}</p>
-      `;
-
-   
-      document.getElementById("ladoDerecho").innerHTML = `
-        <p><strong style="color:red">Pilotos:</strong><br> ${data.pilotos}</p>
-        <p><strong style="color:red">Tipo de conducción:</strong> ${data.tipoConduccion}</p>
-        <p><strong style="color:red">Velocidad promedio km/h:</strong> ${data.velocidadPromedio}</p>
-        <p><strong style="color:red">Consumo combustible:</strong><br>
-           seco: ${data.consumoSeco}, lluvioso: ${data.consumoLluvia}, extremo: ${data.consumoExtremo}</p>
-        <p><strong style="color:red">Desgaste neumáticos:</strong><br>
-           seco: ${data.desgasteSeco}, lluvioso: ${data.desgasteLluvia}, extremo: ${data.desgasteExtremo}</p>
-      `;
-
-
-      document.getElementById("imagenAuto").src = data.imagen;
-
-   
-      document.getElementById("infoDetalle").style.display = "block";
-    })
-    .catch(error => {
-      console.error("Error al obtener los datos:", error);
-      alert("Hubo un problema al cargar la información.");
+imagenes.forEach(imagen => {
+    imagen.addEventListener('click', async () => {
+        const id = imagen.dataset.id;
+        try {
+            const res = await fetch(`${apiURL}/${id}`);
+            const data = await res.json();
+            mostrarDetalleExtra(data, imagen.src);
+        } catch (error) {
+            console.error('Error al obtener datos:', error);
+        }
     });
+});
+
+function mostrarDetalleExtra(data, imagenSrc) {
+    document.getElementById("extraLadoIzquierdo").innerHTML = `
+        <p>Equipo: <br><span>${data.escuderia}</span></p>
+        <p>Modelo: ${data.nombre} &nbsp;&nbsp; Motor: ${data.motor}</p>
+        <p>Aceleración: ${data.aceleracion}</p>
+        <p>Velocidad max: ${data.velocidad}</p>
+    `;
+
+    document.getElementById("extraLadoDerecho").innerHTML = `
+        <p><span>Pilotos:</span><br> ${data.pilotos}</p>
+        <p><span>Tipo de conducción:</span> ${data.conduccion}</p>
+        <p><span>Velocidad promedio km/h:</span> ${data.velocidad_promedio}</p>
+        <p><span>Consumo combustible:</span><br> seco: ${data.combustible_seco}, lluvioso: ${data.combustible_lluvia}, extremo: ${data.combustible_extremo}</p>
+        <p><span>Desgaste neumáticos:</span><br> seco: ${data.desgaste_seco}, lluvioso: ${data.desgaste_lluvia}, extremo: ${data.desgaste_extremo}</p>
+    `;
+
+    document.getElementById("extraImagenAuto").src = imagenSrc;
+
+    document.getElementById("infoDetalleExtra").style.display = "block";
 }
 
-function cerrarDetalle() {
-  document.getElementById("infoDetalle").style.display = "none";
+function cerrarDetalleExtra() {
+    document.getElementById("infoDetalleExtra").style.display = "none";
 }

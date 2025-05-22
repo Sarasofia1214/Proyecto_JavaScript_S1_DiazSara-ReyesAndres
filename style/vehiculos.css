@@ -40,7 +40,6 @@ img.logo {
 
 }
 
-
 a{
     text-decoration: none;
     color: black;
@@ -68,45 +67,151 @@ img:hover {
 }
 
 
+
+/* Estilos específicos para la información detallada exactamente como en la imagen */
 .info-detallada {
-  background-color: #fff;
-  padding: 20px;
   position: fixed;
-  margin-top: 13vw;
-  left: 20vw;
-  width: 60%;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.7);
-  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 700px;
+  background-color: rgba(242, 242, 242, 0.95);
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif;
+  background-image: url("../storage/images/bg-pattern.png");
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+.info-detallada h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0 20px 15px;
+  color: #000;
+  text-align: left;
+  position: relative;
+  font-family: 'Formula1-Regular', 'Arial', sans-serif;
+}
+
+/* Estilo para el año 2025 */
+.anio-2025 {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 50px;
+  color: #E10600;
+  font-weight: bold;
+  opacity: 0.9;
+  font-family: 'Formula1-Bold', 'Arial', sans-serif;
+}
+
+/* Logo F1 */
+.f1-logo {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  width: 60px;
+  opacity: 0.7;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 15px 0;
+  padding: 0 15px;
+}
+
+.lado-izquierdo, .lado-derecho {
+  width: 48%;
 }
 
 .lado-izquierdo {
-  background-image: url(../storage/images/fondo_info_detallada.svg);
-  padding: 1vw;
-  border-radius: 3vw;
+  background-color: #E10600;
   color: white;
-  width: 30%;
-
+  border-radius: 10px;
+  padding: 15px;
 }
 
 .lado-derecho {
-  padding: 15px;
-  width: 65%;
-  float: right;
+  padding: 15px 0;
+  color: #000;
+}
+
+.info-seccion {
+  margin-bottom: 15px;
+}
+
+/* Estilo para los títulos en el lado izquierdo (blanco sobre rojo) */
+.lado-izquierdo .info-seccion h3 {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: white;
+}
+
+.lado-izquierdo .info-seccion p {
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+  color: white;
+}
+
+/* Estilo para los títulos en el lado derecho (rojo sobre blanco) */
+.lado-derecho .info-seccion h3 {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: #E10600;
+}
+
+.lado-derecho .info-seccion p {
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+  color: #000;
+}
+
+/* Destacar consumo combustible y desgaste neumáticos con color rojo */
+.destaque-rojo {
+  color: #E10600 !important;
+  font-weight: bold !important;
 }
 
 .imagen-auto {
   text-align: center;
-  margin-top: 20px;
-  clear: both;
+  margin: 10px 0;
+  background-color: #222;
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-button {
-  background-color: #c00;
+.imagen-auto img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+/* Botón Regresar */
+.btn-regresar {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 8px 20px;
+  background-color: #E10600;
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  font-family: 'Formula1-Regular', 'Arial', sans-serif;
+  text-transform: uppercase;
 }
