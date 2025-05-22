@@ -32,7 +32,6 @@ function inicializarEventos() {
         auto = monoplazas[index];
       }
 
-      console.log("Auto encontrado:", auto); 
 
       if (auto) {
         const equipo = auto.equipo || auto.team ;
@@ -41,7 +40,7 @@ function inicializarEventos() {
         const aceleracion = auto.aceleracion_0_100 || auto.acceleration;
         const velocidadMax = auto.velocidad_maxima_kmh || auto.maxSpeed ;
         
-        let pilotos = "Max Verstappen y Sergio Pérez";
+        let pilotos = "";
         if (auto.piloto && Array.isArray(auto.piloto)) {
           pilotos = auto.piloto.join(" y ");
         } else if (auto.drivers) {
