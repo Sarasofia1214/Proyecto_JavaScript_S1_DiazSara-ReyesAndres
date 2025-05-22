@@ -150,10 +150,11 @@ img{
   border-radius: 0.2vw;
   padding: 0.7vw;
   width: 100%;
-  margin-top: 1vh;
+  margin-top: 15vh;
   max-width:  94.5%;
   font-family: "2", sans-serif;
   font-size: 1vw;
+
   
 }
 
@@ -217,4 +218,51 @@ font-family: "2", sans-serif;
 padding: 2vw;
 text-align: center;
 }
+.circuitojava{
+  position: absolute;
+  width: 13vw;
+  height: 13vh;
+  top: 9vh;
+  left: 24vw;
+}
+.descripcionjava{
+  position: absolute;
+  top: 47vh;
+  left: 24vw;
+
+}
+.añojava{
+  position: absolute;
+  left: 64vw;
+  top: 13.6vh;
+  font-size: 1.8vw;
+
+  
+}
+.tiempojava{
+  position: absolute;
+  top: 21.8vh;
+  left: 50.7vw ;
+
+}
+.pilotojava{
+
+}
+.longitudjava{
+  position: absolute;
+  top: 18vh;
+
+}
+.vueltas{
+  position: absolute;
+  top: 21.8vh;
+
+}
+.nombrejava{
+  position: absolute;
+  top: 18vh;
+  left: 50.7vw;
+}
+
+
 

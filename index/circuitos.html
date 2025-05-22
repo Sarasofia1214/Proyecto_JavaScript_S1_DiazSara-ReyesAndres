@@ -9,86 +9,60 @@
 </head>
 
 <header>
-    <img class="logo" src="../storage/images/formula-1-logo-png_seeklogo-330361-removebg-preview 5.svg" alt="">
-    <p class="escuderias">Escuderias</p>
-    <p class="vehiculos">Vehículos</p>
-    <p class="pilotos">Pilotos</p>
-    <p class="circuitos">Circuitos</p>
-    <p class="comparar">Comparar</p>
+  <img class="logo" src="../storage/images/formula-1-logo-png_seeklogo-330361-removebg-preview 5.svg" alt="">
+  <p class="escuderias">Escuderias</p>
+  <p class="vehiculos">Vehículos</p>
+  <p class="pilotos">Pilotos</p>
+  <p class="circuitos">Circuitos</p>
+  <p class="comparar">Comparar</p>
 </header>
-<body>
+
 <div class="circuitos_container">
-    <img src="../storage/images/image 121.svg" alt="" class="cataluña" onclick="mostrarCircuitos()">
-    <img src="../storage/images/joacarlos.avif" alt="" class="joacarlos" onclick="mostrarCircuitos()" >
-    <img src="../storage/images/calfat.jpg" alt="" class="calfat" onclick="mostrarCircuitos()">
-    <img src="../storage/images/zolder.avif" alt="" class="zolder" onclick="mostrarCircuitos()">
-
-
-
-    
+  <img src="../storage/images/image 121.svg" alt="" id="cataluña" data-id="2" onclick="mostrarCircuitos(this)">
+  <img src="../storage/images/joacarlos.avif" alt="" id="joacarlos" data-id="3" onclick="mostrarCircuitos(this)">
+  <img src="../storage/images/calfat.jpg" alt="" id="calfat" data-id="4" onclick="mostrarCircuitos(this)">
+  <img src="../storage/images/zolder.avif" alt="" id="zolder" data-id="1" onclick="mostrarCircuitos(this)">
 </div>
-<div id="principal" onclick=" ocultarCircuitos()">
-        
-  <div class="divImagen">
-      <img src="../storage/images/image 121.svg" alt="" class="cataluna">
 
+<div id="principal" style="display:none" onclick="ocultarCircuitos()">
+  <div class="divImagen">
+    <img src="../storage/images/image 121.svg" alt="" class="cataluna">
   </div>
   <div class="divDescripcion">
-      
-      <div class="superior">
-
-          <div class="imagenCircuito">
-              <img src="../storage/images/monaco.svg" alt="" class="monaco">
-
+    <div class="superior">
+      <div class="imagenCircuito">
+        <img src="../storage/images/monaco.svg" alt="" class="monaco">
+      </div>
+      <div class="datos">
+        <div class="circuit-card">
+          <div class="circuit-header">
+            <h1 class="circuit-title"></h1>
+            <div class="circuit-year"></div>
           </div>
-          
-          <div class="datos">
-              <div class="circuit-card">
-                  <div class="circuit-header">
-                    <h1 class="circuit-title">Circuit de Monaco</h1>
-                    <div class="circuit-year">2025</div>
-                  </div>
-                  
-                  <div class="circuit-stats">
-                    <div class="stat-item">
-                      <div class="stat-label">Longitud</div>
-                      <div class="stat-value">3.331 km</div>
-                    </div>
-                    <div class="stat-item">
-                      <div class="stat-label">Nombre</div>
-                      <div class="stat-value">Monaco</div>
-                    </div>
-                    <div class="stat-item">
-                      <div class="stat-label">Mail</div>
-                      <div class="stat-value">260.266 km</div>
-                    </div>
-                    <div class="stat-item">
-                      <div class="stat-label">Record</div>
-                      <div class="stat-value">1:18.999 (Lewis Hamilton, 2021)</div>
-                    </div>
-                  </div>
-                  
-      
+          <div class="circuit-stats">
+            <div class="stat-item">
+              <div class="stat-label">Longitud</div>
+              <div class="stat-value"></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Nombre</div>
+              <div class="stat-value"></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">vueltas</div>
+              <div class="stat-value"></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Record</div>
+              <div class="stat-value"></div>
+            </div>
           </div>
+          <div id="nombre_1"></div>
+        </div>
       </div>     
-      
+    </div>
   </div>
-  <p class="texto1">Bienvenidos al Circuit de Monaco, el escenario donde la velocidad se convierte en arte y la precisión es la única moneda de cambio.
-
-    Ubicado en el corazón del Principado de Mónaco, este trazado urbano de 3.337 kilómetros es una obra maestra del automovilismo. Desde su primera carrera en 1929, ha sido el circuito más desafiante y prestigioso de la Fórmula 1, donde cada curva es una prueba de habilidad y cada victoria, una hazaña legendaria2.
-    
-    Pero Mónaco no es solo un circuito, es un espectáculo. Sus calles estrechas, sus curvas cerradas y su icónico túnel hacen que adelantar sea casi imposible. Aquí, la clasificación es más importante que nunca, porque una buena posición en la parrilla puede definir el destino de la carrera. Nelson Piquet lo describió como "andar en bicicleta por el salón de tu casa", una metáfora perfecta para la precisión milimétrica que exige.
-    
-    Las curvas de Mónaco son nombres propios en la historia del automovilismo: Sainte Devote, Mirabeau, Loews, Rascasse y el túnel han sido testigos de momentos inolvidables. Ayrton Senna, el rey de Mónaco, conquistó este trazado en seis ocasiones, dejando su huella imborrable en cada vuelta.
-    
-    Más allá de la pista, el glamour de Montecarlo envuelve el Gran Premio. Yates de lujo, celebridades y la realeza monegasca convierten este evento en una fiesta exclusiva, donde el automovilismo se mezcla con la elegancia y el prestigio.
-    
-    Así que, si alguna vez tienes la oportunidad de ver una carrera en Mónaco, recuerda: no es solo   
 </div>
-</body>
-una carrera, es una experiencia única. El Circuit de Monaco no es solo un trazado, es un símbolo de la Fórmula 1, donde la historia y la modernidad se entrelazan en cada curva. Prepárate para vivir la emoción de la velocidad en el circuito más emblemático del mundo.</p>
-
-
 
 <body>
 
