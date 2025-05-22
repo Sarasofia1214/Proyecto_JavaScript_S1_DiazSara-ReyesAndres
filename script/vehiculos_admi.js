@@ -1,10 +1,9 @@
 let monoplazas = [];
 
-// Cargar datos de la API
 fetch("https://682a64c2ab2b5004cb3698d4.mockapi.io/formulaone/formula")
   .then(res => res.json())
   .then(data => {
-    console.log("Datos recibidos:", data); // Para debug
+    console.log("Datos recibidos:", data); 
     
     // Verificar la estructura de los datos
     if (data && data.length > 0 && data[0].monoplazas) {
@@ -45,6 +44,7 @@ function inicializarEventos() {
         const motor = auto.motor || auto.engine || "No disponible";
         const aceleracion = auto.aceleracion_0_100 || auto.acceleration || "No disponible";
         const velocidadMax = auto.velocidad_maxima_kmh || auto.maxSpeed || "No disponible";
+        const imagen = auto.model ;
         
         // Pilotos
         let pilotos = "No disponible";
@@ -88,8 +88,8 @@ function inicializarEventos() {
         detalleContainer.innerHTML = `
           <div class="info-detallada">
             <h2>Información Detallada</h2>
-            <div class="anio-2025">2025</div>
-            <img class="f1-logo" src="../storage/images/logo2025.png" alt="F1 Logo" style="position: absolute; top: 70px; right: 15px; width: 60px; opacity: 0.7;">
+            <img src="../storage/images/flechas.svg" alt="" style="position: absolute; top: 70px; right: 15px; width: 60px; opacity: 0.7;">
+             <img src="../storage/images/logo2025.svg" alt="F1 Logo" style="position: absolute; top: 70px; right: 15px; width: 60px; opacity: 0.7;">
             
             <div class="contenedor">
               <div class="lado-izquierdo">
@@ -140,7 +140,7 @@ function inicializarEventos() {
             </div>
             
             <div class="imagen-auto">
-              <img src="${imagenAuto}" alt="Auto Formula 1">
+              <img src="${imagen}" alt="Auto Formula 1">
             </div>
             
             <button class="btn-regresar" onclick="cerrarDetalle()">Regresar</button>
