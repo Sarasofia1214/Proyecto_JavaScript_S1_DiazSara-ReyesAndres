@@ -136,8 +136,6 @@ function inicializarEventos() {
               <img src="${imagenAuto}" alt="Auto Formula 1">
             </div>
             <div class="container_botones">
-                <button class="boton_eliminar">Eliminar</button>
-                <button class="boton_editar">Editar</button>
                 <button class="boton_regresar" onclick="cerrarDetalle()">Regresar</button>
             </div>
           </div>
@@ -160,3 +158,7 @@ document.addEventListener("keydown", function(event) {
     cerrarDetalle();
   }
 });
+
+
+
+
