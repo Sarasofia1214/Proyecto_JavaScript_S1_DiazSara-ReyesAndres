@@ -44,17 +44,13 @@ a{
   color: black;
 }
 
-.nombre, .modelo, .posicion{
-  color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
 .container_cars{
   display: flex;
   flex-direction: column;
   width: 100%;
   object-fit: cover;
-  margin-top: 5vw; /* Espacio para el header fijo */
+  margin-top: 5vw; 
 }
 
 .container_cars img{
@@ -64,14 +60,13 @@ a{
   height: 37vh;             
   object-fit: cover;  
   transition: all .2s ease-in-out;
-  cursor: pointer; /* Indicar que es clickeable */
+  cursor: pointer; 
 }
 
 .container_cars img:hover { 
   transform: scale(1.1); 
 }
 
-/* Estilos para el modal de información detallada */
 .detalle-vehiculo {
   position: fixed;
   top: 0;
@@ -87,47 +82,36 @@ a{
 
 .info-detallada {
   position: relative;
-  width: min(900px, 95vw);
-  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-  border-radius: min(25px, 4vw);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  padding: min(30px, 4vw);
-  font-family: 'Arial', sans-serif;
+  width: 60vw;
+  margin-left: 20vw;
+  background: white;
+  border-radius: 1vw;
+  font-family: "2";
+  padding: 3vw;
   max-height: 90vh;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .info-detallada h2 {
-  font-size: clamp(20px, 4vw, 32px);
+  font-size: 1.2vw;
   font-weight: bold;
-  margin: min(15px, 2vw) 0 min(30px, 4vw) min(20px, 3vw);
-  color: #000;
   text-align: left;
-  position: relative;
-  font-family: 'Formula1-Bold', 'Arial', sans-serif;
+  font-family: "1";
   letter-spacing: 1px;
 }
-
-/* Estilo para el año 2025 */
-.anio-2025 {
-  position: absolute;
-  top: min(20px, 3vw);
-  right: min(30px, 4vw);
-  font-size: clamp(32px, 8vw, 64px);
-  color: #E10600;
-  font-weight: bold;
-  opacity: 0.9;
-  font-family: 'Formula1-Bold', 'Arial', sans-serif;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+.logos_detallado{
+  display: flex;
+  justify-content: space-between;
 }
 
-/* Logo F1 */
+.logo_flechas{
+  width: 17vw;
+  margin-right: 6vw;
+}
 .f1-logo {
-  position: absolute;
-  top: clamp(65px, 12vw, 90px);
-  right: min(30px, 4vw);
-  width: clamp(40px, 8vw, 70px);
-  opacity: 0.8;
+  width: 10vw;
+  margin-left: 9vw;
+
 }
 
 .contenedor {
@@ -138,29 +122,13 @@ a{
   padding: 0 min(20px, 3vw);
 }
 
-@media (min-width: 768px) {
-  .contenedor {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.lado-izquierdo, .lado-derecho {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .lado-izquierdo, .lado-derecho {
-    width: 48%;
-  }
-}
 
 .lado-izquierdo {
-  background: linear-gradient(135deg, #E10600 0%, #c70500 100%);
+  background-image: url(../storage/images/fondo_info_detallada.svg);
+  background-repeat: no-repeat;
   color: white;
-  border-radius: min(15px, 2vw);
-  padding: min(25px, 3vw);
-  box-shadow: 0 8px 16px rgba(225, 6, 0, 0.3);
+  border-radius: 1vw;
+  padding: 2vw;
 }
 
 .lado-derecho {
@@ -170,17 +138,9 @@ a{
   border-radius: min(15px, 2vw);
 }
 
-.info-seccion {
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 12px;
-}
 
-.lado-derecho .info-seccion {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
 
-/* Estilo para los títulos en el lado izquierdo (blanco sobre rojo) */
+
 .lado-izquierdo .info-seccion h3 {
   display: block;
   font-size: clamp(14px, 2.5vw, 16px);
@@ -200,7 +160,6 @@ a{
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-/* Estilo para los títulos en el lado derecho (rojo sobre blanco) */
 .lado-derecho .info-seccion h3 {
   display: block;
   font-size: clamp(14px, 2.5vw, 16px);
@@ -213,67 +172,98 @@ a{
 
 .lado-derecho .info-seccion p {
   display: block;
-  font-size: clamp(15px, 2.8vw, 18px);
+  font-size: 1.5vw;
   font-weight: 600;
   color: #333;
   margin: 0;
 }
 
-/* Destacar consumo combustible y desgaste neumáticos con color rojo */
 .destaque-rojo {
-  color: #E10600 !important;
-  font-weight: bold !important;
-  font-size: clamp(14px, 2.5vw, 16px) !important;
+
+  font-weight: bold;
+  font-size:1vw;
 }
 
 .imagen-auto {
   text-align: center;
-  margin: min(25px, 4vw) auto;
-  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-  border-radius: min(20px, 3vw);
-  padding: min(30px, 4vw);
-  width: min(85%, 600px);
-  box-shadow: inset 0 4px 8px rgba(0,0,0,0.3);
+  margin: auto;
+  padding: 2vw;
+  width: 30vw;
 }
 
 .imagen-auto img {
   max-width: 100%;
-  max-height: clamp(150px, 20vw, 200px);
   object-fit: contain;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+ 
 }
 
-/* Botón Regresar */
-.btn-regresar {
-  position: absolute;
-  bottom: min(25px, 4vw);
-  right: min(30px, 4vw);
-  padding: clamp(8px, 1.5vw, 12px) clamp(15px, 3vw, 25px);
-  background: linear-gradient(135deg, #E10600 0%, #c70500 100%);
+
+.container_botones{
+  display: flex;
+  width: fit-content;
+  gap: 2vw;
+  justify-content: space-between;
+}
+
+.boton_eliminar {
+  padding-bottom: 3vw;
+  padding: 1vw;
+  background-color: #a00400;
   color: white;
   border: none;
-  border-radius: min(8px, 1vw);
+  border-radius: 1vw;
   cursor: pointer;
-  font-weight: bold;
-  font-family: 'Formula1-Regular', 'Arial', sans-serif;
-  text-transform: uppercase;
-  font-size: clamp(12px, 2vw, 14px);
-  letter-spacing: 1px;
-  box-shadow: 0 4px 8px rgba(225, 6, 0, 0.3);
-  transition: all 0.3s ease;
+  font-size: 1vw;
+  font-family: "1";
+
+}
+.boton_editar {
+  padding-bottom: 3vw;
+  padding: 1vw;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  font-size: 1vw;
+  font-family: "1";
+
 }
 
-.btn-regresar:hover {
-  background: linear-gradient(135deg, #c70500 0%, #a00400 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(225, 6, 0, 0.4);
+.boton_regresar {
+  padding-bottom: 3vw;
+  padding: 1vw;
+  background-color: #a00400;
+  color: white;
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  font-size: 1vw;
+  font-family: "1";
+
 }
 
-.btn-regresar:active {
-  transform: translateY(0);
+
+
+
+@media (min-width: 430px) {
+  .contenedor {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
-/* Responsive */
+.lado-izquierdo, .lado-derecho {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lado-izquierdo, .lado-derecho {
+    width: 48%;
+  }
+}
+
+
 @media (max-width: 480px) {
   .info-detallada {
     width: 95vw;

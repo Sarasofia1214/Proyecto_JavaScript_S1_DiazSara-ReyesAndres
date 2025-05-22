@@ -1,56 +1,35 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/vehiculos.css">
-    <title>Vehiculos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/vehiculos.css">
+  <title>Vehículos</title>
 </head>
 <body>
     <header>
-        <a href="./inicio.html"><img class="logo" src="../storage/images/formula-1-logo-png_seeklogo-330361-removebg-preview 5.svg" alt=""></a>
+        <img class="logo" src="../storage/images/formula-1-logo-png_seeklogo-330361-removebg-preview 5.svg" alt="">
         <a href="./escuderias.html"><p class="escuderias">Escuderias</p></a>
         <a href="./vehiculo.html"><p class="vehiculos">Vehículos</p></a>
         <a href="./pilotos.html"><p class="pilotos">Pilotos</p></a>
         <a href="./circuitos.html"><p class="circuitos">Circuitos</p></a>
         <a href="./comparar.html"><p class="comparar">Comparar</p></a>
     </header>
-    
-    <!-- Componente de información detallada (inicialmente oculto) -->
-    <div class="info-detallada" id="infoDetalle" style="display: none;">
-        <h2>Información Detallada</h2>
-        <div class="anio-2025">2025</div>
-        <img class="f1-logo" src="../storage/images/f1-logo.svg" alt="F1 Logo">
-        
-        <div class="contenedor">
-            <div class="lado-izquierdo" id="ladoIzquierdo">
-                <!-- Aquí se cargarán dinámicamente los datos del lado izquierdo -->
-            </div>
-            <div class="lado-derecho" id="ladoDerecho">
-                <!-- Aquí se cargarán dinámicamente los datos del lado derecho -->
-            </div>
-        </div>
-        <div class="imagen-auto">
-            <img id="imagenAuto" src="" alt="Auto Formula 1">
-        </div>
-        <button class="btn-regresar" onclick="cerrarDetalle()">Regresar</button>
-    </div>
-    
-    <!-- Contenedor de imágenes de vehículos -->
-    <div class="container_cars" id="container_cars_id">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (1).jpeg" alt="Auto 1" data-id="1">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (9).jpeg" alt="Auto 2" data-id="2">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM.jpeg" alt="Auto 3" data-id="3">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (7).jpeg" alt="Auto 4" data-id="4">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (5).jpeg" alt="Auto 5" data-id="5">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (6).jpeg" alt="Auto 6" data-id="6">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (2).jpeg" alt="Auto 7" data-id="7">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (8).jpeg" alt="Auto 8" data-id="8">
-        <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (3).jpeg" alt="Auto 9" data-id="9">
-        <img src="../storage/images/carroultimo.png" alt="Auto 10" data-id="10">
-    </div>
-    
 
-    <script src="../script/vehiculos.js"></script>
+  <div class="container_cars" id="container_cars_id">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (1).jpeg" alt="" data-id="1">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (9).jpeg" alt="" data-id="2">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM.jpeg" alt="" data-id="3">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (7).jpeg" alt="" data-id="4">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (5).jpeg" alt="" data-id="5">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (6).jpeg" alt="" data-id="6">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (2).jpeg" alt="" data-id="7">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (8).jpeg" alt="" data-id="8">
+    <img src="../storage/images/WhatsApp Image 2025-05-18 at 4.09.57 PM (3).jpeg" alt="" data-id="9">
+    <img src="../storage/images/carroultimo.png" alt="" data-id="10">
+  </div>
+  
+
+  <div id="detalleVehiculo" class="detalle-vehiculo" style="display: none;"></div>
+  <script src="../script/vehiculos.js"></script>
 </body>
 </html>

@@ -1,20 +1,20 @@
 @font-face {
-    font-family: "1";
-    src: url(../storage/fontss/Formula1-Bold.otf);
-  }
-  @font-face {
-    font-family: "2";
-    src: url(../storage/fontss/Formula1-Regular.otf);
-  }
-  @font-face {
-    font-family: "3";
-    src: url(../storage/fontss/Formula1-Wide.otf);
-  }
+  font-family: "1";
+  src: url(../storage/fontss/Formula1-Bold.otf);
+}
+@font-face {
+  font-family: "2";
+  src: url(../storage/fontss/Formula1-Regular.otf);
+}
+@font-face {
+  font-family: "3";
+  src: url(../storage/fontss/Formula1-Wide.otf);
+}
 
 body{
-    margin: 0%;
-    padding: 0%;
-    background-color: black;
+  margin: 0%;
+  padding: 0%;
+  background-color: black;
 }
 
 header {
@@ -37,181 +37,254 @@ img.logo {
   width: 10vw;
   object-fit: fill;
   margin-left: 1vw;
-
 }
 
 a{
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
-.nombre, .modelo, .posicion{
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+
+
 .container_cars{
   display: flex;
-  flex-direction: column                 ;
+  flex-direction: column;
   width: 100%;
   object-fit: cover;
+  margin-top: 5vw; 
 }
-img{
+
+.container_cars img{
   object-fit: contain;
-    width: 100%;               
-    max-width: 100%;         
-    height: 37vh;             
-    object-fit: cover;  
-    transition: all .2s ease-in-out;        
+  width: 100%;               
+  max-width: 100%;         
+  height: 37vh;             
+  object-fit: cover;  
+  transition: all .2s ease-in-out;
+  cursor: pointer; 
 }
-img:hover { 
+
+.container_cars img:hover { 
   transform: scale(1.1); 
 }
 
-
-
-/* Estilos específicos para la información detallada exactamente como en la imagen */
-.info-detallada {
+.detalle-vehiculo {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 700px;
-  background-color: rgba(242, 242, 242, 0.95);
-  border-radius: 25px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  z-index: 1000;
-  font-family: 'Arial', sans-serif;
-  background-image: url("../storage/images/bg-pattern.png");
-  background-size: cover;
-  background-blend-mode: overlay;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-detallada {
+  position: relative;
+  width: 60vw;
+  margin-left: 20vw;
+  background: white;
+  border-radius: 1vw;
+  font-family: "2";
+  padding: 3vw;
+  max-height: 90vh;
+  overflow: auto;
 }
 
 .info-detallada h2 {
-  font-size: 28px;
+  font-size: 1.2vw;
   font-weight: bold;
-  margin: 10px 0 20px 15px;
-  color: #000;
   text-align: left;
-  position: relative;
-  font-family: 'Formula1-Regular', 'Arial', sans-serif;
+  font-family: "1";
+  letter-spacing: 1px;
+}
+.logos_detallado{
+  display: flex;
+  justify-content: space-between;
 }
 
-/* Estilo para el año 2025 */
-.anio-2025 {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 50px;
-  color: #E10600;
-  font-weight: bold;
-  opacity: 0.9;
-  font-family: 'Formula1-Bold', 'Arial', sans-serif;
+.logo_flechas{
+  width: 17vw;
+  margin-right: 6vw;
 }
-
-/* Logo F1 */
 .f1-logo {
-  position: absolute;
-  top: 70px;
-  right: 15px;
-  width: 60px;
-  opacity: 0.7;
+  width: 10vw;
+  margin-left: 9vw;
+
 }
 
 .contenedor {
   display: flex;
-  justify-content: space-between;
-  margin: 10px 0 15px 0;
-  padding: 0 15px;
+  flex-direction: column;
+  gap: min(25px, 3vw);
+  margin: min(20px, 3vw) 0 min(25px, 4vw) 0;
+  padding: 0 min(20px, 3vw);
 }
 
-.lado-izquierdo, .lado-derecho {
-  width: 48%;
-}
 
 .lado-izquierdo {
-  background-color: #E10600;
+  background-image: url(../storage/images/fondo_info_detallada.svg);
+  background-repeat: no-repeat;
   color: white;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 1vw;
+  padding: 2vw;
 }
 
 .lado-derecho {
-  padding: 15px 0;
+  padding: min(25px, 3vw) min(20px, 3vw);
   color: #000;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: min(15px, 2vw);
 }
 
-.info-seccion {
-  margin-bottom: 15px;
-}
 
-/* Estilo para los títulos en el lado izquierdo (blanco sobre rojo) */
+
+
 .lado-izquierdo .info-seccion h3 {
   display: block;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: bold;
-  margin-bottom: 2px;
-  color: white;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .lado-izquierdo .info-seccion p {
   display: block;
-  font-size: 18px;
-  font-weight: normal;
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: bold;
   color: white;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-/* Estilo para los títulos en el lado derecho (rojo sobre blanco) */
 .lado-derecho .info-seccion h3 {
   display: block;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: bold;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
   color: #E10600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .lado-derecho .info-seccion p {
   display: block;
-  font-size: 18px;
-  font-weight: normal;
-  color: #000;
+  font-size: 1.5vw;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
 }
 
-/* Destacar consumo combustible y desgaste neumáticos con color rojo */
 .destaque-rojo {
-  color: #E10600 !important;
-  font-weight: bold !important;
+
+  font-weight: bold;
+  font-size:1vw;
 }
 
 .imagen-auto {
   text-align: center;
-  margin: 10px 0;
-  background-color: #222;
-  border-radius: 15px;
-  padding: 20px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  padding: 2vw;
+  width: 30vw;
 }
 
 .imagen-auto img {
   max-width: 100%;
-  max-height: 220px;
   object-fit: contain;
+ 
 }
 
-/* Botón Regresar */
-.btn-regresar {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  padding: 8px 20px;
-  background-color: #E10600;
+
+.container_botones{
+  display: flex;
+  width: fit-content;
+  gap: 2vw;
+  justify-content: space-between;
+}
+
+.boton_eliminar {
+  padding-bottom: 3vw;
+  padding: 1vw;
+  background-color: #a00400;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 1vw;
   cursor: pointer;
-  font-weight: bold;
-  font-family: 'Formula1-Regular', 'Arial', sans-serif;
-  text-transform: uppercase;
+  font-size: 1vw;
+  font-family: "1";
+
+}
+.boton_editar {
+  padding-bottom: 3vw;
+  padding: 1vw;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  font-size: 1vw;
+  font-family: "1";
+
+}
+
+.boton_regresar {
+  padding-bottom: 3vw;
+  padding: 1vw;
+  background-color: #a00400;
+  color: white;
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  font-size: 1vw;
+  font-family: "1";
+
+}
+
+
+
+
+@media (min-width: 430px) {
+  .contenedor {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.lado-izquierdo, .lado-derecho {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lado-izquierdo, .lado-derecho {
+    width: 48%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .info-detallada {
+    width: 95vw;
+    padding: min(20px, 4vw);
+  }
+  
+  .contenedor {
+    gap: 15px;
+    padding: 0 10px;
+  }
+  
+  .lado-izquierdo, .lado-derecho {
+    padding: 20px 15px;
+  }
+  
+  .info-seccion {
+    margin-bottom: 15px;
+  }
+  
+  .imagen-auto {
+    width: 90%;
+    padding: 20px;
+  }
 }
