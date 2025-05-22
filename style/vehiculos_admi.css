@@ -78,7 +78,7 @@ a{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 2000;
   display: flex;
   justify-content: center;
@@ -87,107 +87,135 @@ a{
 
 .info-detallada {
   position: relative;
-  width: 90%;
-  max-width: 700px;
-  background-color: rgba(242, 242, 242, 0.95);
-  border-radius: 25px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  width: min(900px, 95vw);
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-radius: min(25px, 4vw);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: min(30px, 4vw);
   font-family: 'Arial', sans-serif;
   max-height: 90vh;
   overflow-y: auto;
 }
 
 .info-detallada h2 {
-  font-size: 28px;
+  font-size: clamp(20px, 4vw, 32px);
   font-weight: bold;
-  margin: 10px 0 20px 15px;
+  margin: min(15px, 2vw) 0 min(30px, 4vw) min(20px, 3vw);
   color: #000;
   text-align: left;
   position: relative;
-  font-family: 'Formula1-Regular', 'Arial', sans-serif;
+  font-family: 'Formula1-Bold', 'Arial', sans-serif;
+  letter-spacing: 1px;
 }
 
 /* Estilo para el año 2025 */
 .anio-2025 {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 50px;
+  top: min(20px, 3vw);
+  right: min(30px, 4vw);
+  font-size: clamp(32px, 8vw, 64px);
   color: #E10600;
   font-weight: bold;
   opacity: 0.9;
   font-family: 'Formula1-Bold', 'Arial', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Logo F1 */
 .f1-logo {
   position: absolute;
-  top: 70px;
-  right: 15px;
-  width: 60px;
-  opacity: 0.7;
+  top: clamp(65px, 12vw, 90px);
+  right: min(30px, 4vw);
+  width: clamp(40px, 8vw, 70px);
+  opacity: 0.8;
 }
 
 .contenedor {
   display: flex;
-  justify-content: space-between;
-  margin: 10px 0 15px 0;
-  padding: 0 15px;
-  gap: 20px;
+  flex-direction: column;
+  gap: min(25px, 3vw);
+  margin: min(20px, 3vw) 0 min(25px, 4vw) 0;
+  padding: 0 min(20px, 3vw);
+}
+
+@media (min-width: 768px) {
+  .contenedor {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .lado-izquierdo, .lado-derecho {
-  width: 48%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lado-izquierdo, .lado-derecho {
+    width: 48%;
+  }
 }
 
 .lado-izquierdo {
-  background-color: #E10600;
+  background: linear-gradient(135deg, #E10600 0%, #c70500 100%);
   color: white;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: min(15px, 2vw);
+  padding: min(25px, 3vw);
+  box-shadow: 0 8px 16px rgba(225, 6, 0, 0.3);
 }
 
 .lado-derecho {
-  padding: 15px 0;
+  padding: min(25px, 3vw) min(20px, 3vw);
   color: #000;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: min(15px, 2vw);
 }
 
 .info-seccion {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 12px;
+}
+
+.lado-derecho .info-seccion {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para los títulos en el lado izquierdo (blanco sobre rojo) */
 .lado-izquierdo .info-seccion h3 {
   display: block;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: bold;
-  margin-bottom: 2px;
-  color: white;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .lado-izquierdo .info-seccion p {
   display: block;
-  font-size: 18px;
-  font-weight: normal;
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: bold;
   color: white;
   margin: 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 /* Estilo para los títulos en el lado derecho (rojo sobre blanco) */
 .lado-derecho .info-seccion h3 {
   display: block;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: bold;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
   color: #E10600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .lado-derecho .info-seccion p {
   display: block;
-  font-size: 18px;
-  font-weight: normal;
-  color: #000;
+  font-size: clamp(15px, 2.8vw, 18px);
+  font-weight: 600;
+  color: #333;
   margin: 0;
 }
 
@@ -195,61 +223,78 @@ a{
 .destaque-rojo {
   color: #E10600 !important;
   font-weight: bold !important;
+  font-size: clamp(14px, 2.5vw, 16px) !important;
 }
 
 .imagen-auto {
   text-align: center;
-  margin: 10px 0;
-  background-color: #222;
-  border-radius: 15px;
-  padding: 20px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: min(25px, 4vw) auto;
+  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  border-radius: min(20px, 3vw);
+  padding: min(30px, 4vw);
+  width: min(85%, 600px);
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .imagen-auto img {
   max-width: 100%;
-  max-height: 220px;
+  max-height: clamp(150px, 20vw, 200px);
   object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
 }
 
 /* Botón Regresar */
 .btn-regresar {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
-  padding: 8px 20px;
-  background-color: #E10600;
+  bottom: min(25px, 4vw);
+  right: min(30px, 4vw);
+  padding: clamp(8px, 1.5vw, 12px) clamp(15px, 3vw, 25px);
+  background: linear-gradient(135deg, #E10600 0%, #c70500 100%);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: min(8px, 1vw);
   cursor: pointer;
   font-weight: bold;
   font-family: 'Formula1-Regular', 'Arial', sans-serif;
   text-transform: uppercase;
+  font-size: clamp(12px, 2vw, 14px);
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(225, 6, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .btn-regresar:hover {
-  background-color: #b30500;
+  background: linear-gradient(135deg, #c70500 0%, #a00400 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(225, 6, 0, 0.4);
+}
+
+.btn-regresar:active {
+  transform: translateY(0);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .info-detallada {
+    width: 95vw;
+    padding: min(20px, 4vw);
+  }
+  
   .contenedor {
-      flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
   }
   
   .lado-izquierdo, .lado-derecho {
-      width: 100%;
+    padding: 20px 15px;
   }
   
-  .info-detallada {
-      width: 95%;
-      padding: 15px;
+  .info-seccion {
+    margin-bottom: 15px;
   }
   
-  .anio-2025 {
-      font-size: 30px;
+  .imagen-auto {
+    width: 90%;
+    padding: 20px;
   }
 }
