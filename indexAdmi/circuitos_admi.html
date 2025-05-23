@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/circuitos.css">
+
+</head>
+<body>
+  
+<header>
+    <img class="logo" src="../storage/images/formula-1-logo-png_seeklogo-330361-removebg-preview 5.svg" alt="">
+    <a href="./escuderias_admi.html"><p class="escuderias">Escuderias</p></a>
+    <a href="./vehiculo_admi.html"><p class="vehiculos">Vehículos</p></a>
+    <a href="./pilotos_admi.html"><p class="pilotos">Pilotos</p></a>
+    <a href="./circuitos_admi.html"><p class="circuitos">Circuitos</p></a>
+    <a href="./comparar_admi.html"><p class="comparar">Comparar</p></a>
+</header>
+
+<div class="circuitos_container">
+  <img src="../storage/images/image 121.svg" alt="" id="cataluña" data-id="1" onclick="mostrarCircuitos(this)">
+  <img src="../storage/images/joacarlos.avif" alt="" id="joacarlos" data-id="2" onclick="mostrarCircuitos(this)">
+  <img src="../storage/images/calfat.jpg" alt="" id="calfat" data-id="4" onclick="mostrarCircuitos(this)">
+  <img src="../storage/images/zolder.avif" alt="" id="zolder" data-id="3" onclick="mostrarCircuitos(this)">
+</div>
+
+<div id="principal" style="display:none" onclick="ocultarCircuitos()">
+  <div class="divImagen">
+
+  </div>
+  <div class="divDescripcion">
+    <div class="superior">
+      <div class="imagenCircuito">
+
+      </div>
+      <div class="datos">
+        <div class="circuit-card">
+          <div class="circuit-header">
+            <h1 class="circuit-title"></h1>
+            <div class="circuit-year"></div>
+          </div>
+          <div class="circuit-stats">
+            <div class="stat-item">
+              <div class="stat-label">Longitud</div>
+              <div class="stat-value"></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Nombre</div>
+              <div class="stat-value"></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">vueltas</div>
+              <div class="stat-value"></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Record</div>
+              <div class="stat-value"></div>
+            </div>
+          </div>
+          <div id="nombre_1"></div>
+        </div>
+      </div>     
+    </div>
+  </div>
+</div>
+
+<body>
+
+<script src="../script/cricuitos.js"></script>
+</html>
