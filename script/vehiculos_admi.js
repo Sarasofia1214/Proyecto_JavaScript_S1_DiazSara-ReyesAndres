@@ -1,8 +1,6 @@
-// Constantes y variables globales
 const API_URL = 'https://682a64c2ab2b5004cb3698d4.mockapi.io/formulaone/formula';
 let monoplazas = [];
 
-// Función para cargar y mostrar pilotos
 function cargarPilotos() {
   const containerPilotos = document.getElementById("container_cars");
   
@@ -19,7 +17,6 @@ function cargarPilotos() {
       return response.json();
     })
     .then(data => {
-      // Verificar que existe la estructura de datos esperada
       if (!data || !Array.isArray(data) || data.length === 0) {
         throw new Error("No se encontraron datos válidos");
       }
@@ -32,10 +29,8 @@ function cargarPilotos() {
 
       console.log("Datos de pilotos:", pilotoData);
       
-      // Limpiar contenedor antes de agregar nuevos elementos
       containerPilotos.innerHTML = '';
       
-      // Iterar sobre los pilotos y crear las tarjetas
       pilotoData.pilotos.forEach(piloto => {
         const driverCard = document.createElement('div');
         driverCard.className = 'drivers-container';
@@ -70,7 +65,6 @@ function cargarPilotos() {
     });
 }
 
-// Función para cargar vehículos
 function cargarVehiculos() {
   fetch(API_URL)
     .then(response => {
@@ -80,7 +74,6 @@ function cargarVehiculos() {
       return response.json();
     })
     .then(data => {
-      // Manejar diferentes estructuras de respuesta de la API
       if (data && Array.isArray(data) && data.length > 0) {
         if (data[0].monoplazas && Array.isArray(data[0].monoplazas)) {
           monoplazas = data[0].monoplazas;
@@ -100,7 +93,6 @@ function cargarVehiculos() {
     });
 }
 
-// Función para mostrar vehículos en la galería
 function mostrarVehiculosEnGaleria() {
   const container = document.getElementById("container_cars_id");
   
@@ -109,7 +101,6 @@ function mostrarVehiculosEnGaleria() {
     return;
   }
   
-  // Limpiar el contenido actual
   container.innerHTML = "";
   
   if (monoplazas.length === 0) {
@@ -117,7 +108,6 @@ function mostrarVehiculosEnGaleria() {
     return;
   }
   
-  // Mostrar cada vehículo
   monoplazas.forEach((vehiculo, index) => {
     const imgContainer = document.createElement("div");
     imgContainer.className = "vehicle-container";
@@ -128,12 +118,10 @@ function mostrarVehiculosEnGaleria() {
     img.setAttribute("data-id", vehiculo.id || (index + 1));
     img.className = "vehicle-image";
     
-    // Manejar error de carga de imagen
     img.onerror = function() {
       this.src = "../storage/images/carroultimo.png";
     };
     
-    // Agregar event listener al hacer clic
     img.addEventListener("click", (e) => {
       console.log("Click en vehículo:", vehiculo.equipo || vehiculo.team);
       mostrarDetalleVehiculo(vehiculo, img);
@@ -144,7 +132,6 @@ function mostrarVehiculosEnGaleria() {
   });
 }
 
-// Función para mostrar detalles del vehículo
 function mostrarDetalleVehiculo(auto, img) {
   const detalleContainer = document.getElementById("detalleVehiculo");
   
@@ -153,14 +140,12 @@ function mostrarDetalleVehiculo(auto, img) {
     return;
   }
   
-  // Extraer datos con valores por defecto
   const equipo = auto.equipo || auto.team || 'Equipo no especificado';
   const modelo = auto.modelo || auto.model || 'Modelo no especificado';
   const motor = auto.motor || auto.engine || 'Motor no especificado';
   const aceleracion = auto.aceleracion_0_100 || auto.acceleration || '2.6';
   const velocidadMax = auto.velocidad_maxima_kmh || auto.maxSpeed || '350';
   
-  // Manejar pilotos
   let pilotos = "Pilotos no especificados";
   if (auto.piloto && Array.isArray(auto.piloto)) {
     pilotos = auto.piloto.join(" y ");
@@ -170,7 +155,6 @@ function mostrarDetalleVehiculo(auto, img) {
     pilotos = auto.piloto;
   }
   
-  // Manejar velocidad promedio
   let velocidadPromedio = "320";
   if (auto.rendimiento) {
     const tipoConduccion = Object.keys(auto.rendimiento)[0];
@@ -181,7 +165,6 @@ function mostrarDetalleVehiculo(auto, img) {
     velocidadPromedio = auto.avgSpeed;
   }
   
-  // Manejar consumo de combustible
   let consumoCombustible = "Datos no disponibles";
   if (auto.rendimiento) {
     const tipoConduccion = Object.keys(auto.rendimiento)[0];
@@ -194,7 +177,6 @@ function mostrarDetalleVehiculo(auto, img) {
     consumoCombustible = `Seco: ${consumo.dry || 'N/A'}, Lluvioso: ${consumo.wet || 'N/A'}, Extremo: ${consumo.extreme || 'N/A'}`;
   }
   
-  // Manejar desgaste de neumáticos
   let desgasteNeumaticos = "Datos no disponibles";
   if (auto.rendimiento) {
     const tipoConduccion = Object.keys(auto.rendimiento)[0];
@@ -281,7 +263,6 @@ function mostrarDetalleVehiculo(auto, img) {
   detalleContainer.style.display = "block";
 }
 
-// Función para mostrar formulario de añadir vehículo
 function mostrarFormularioAñadir() {
   const detalleContainer = document.getElementById("detalleVehiculo");
   
@@ -344,7 +325,6 @@ function mostrarFormularioAñadir() {
   
   detalleContainer.style.display = "block";
   
-  // Agregar event listener al formulario
   const formulario = document.getElementById("formularioAñadir");
   formulario.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -352,12 +332,10 @@ function mostrarFormularioAñadir() {
   });
 }
 
-// Función para guardar nuevo vehículo
 function guardarNuevoVehiculo() {
   const formulario = document.getElementById('formularioAñadir');
   const formData = new FormData(formulario);
   
-  // Validar datos antes de enviar
   const equipo = formData.get('equipo').trim();
   const modelo = formData.get('modelo').trim();
   const motor = formData.get('motor').trim();
@@ -366,14 +344,12 @@ function guardarNuevoVehiculo() {
   const linkImagen = formData.get('linkImagen').trim();
   
   if (!equipo || !modelo || !motor || !piloto1 || !piloto2 || !linkImagen) {
-    mostrarMensajeError("Por favor, completa todos los campos obligatorios.");
+    mostrarMensajeError("Completa todos los campos obligatorios.");
     return;
   }
   
-  // Obtener el siguiente ID disponible
   const proximoId = monoplazas.length > 0 ? Math.max(...monoplazas.map(m => m.id || 0)) + 1 : 1;
   
-  // Crear objeto del nuevo vehículo
   const nuevoVehiculo = {
     id: proximoId,
     equipo: equipo,
@@ -400,10 +376,8 @@ function guardarNuevoVehiculo() {
     }
   };
   
-  // Mostrar mensaje de carga
   mostrarMensajeCarga("Guardando vehículo...");
   
-  // Hacer POST a la API
   fetch(API_URL, {
     method: 'POST',
     headers: {
@@ -420,16 +394,12 @@ function guardarNuevoVehiculo() {
   .then(data => {
     console.log('Vehículo guardado exitosamente:', data);
     
-    // Actualizar array local
     monoplazas.push(data);
     
-    // Actualizar la galería de vehículos
     mostrarVehiculosEnGaleria();
     
-    // Mostrar mensaje de éxito
     mostrarMensajeExito("¡Vehículo añadido exitosamente!");
     
-    // Cerrar modal después de 2 segundos
     setTimeout(() => {
       cerrarDetalle();
     }, 2000);
@@ -440,7 +410,6 @@ function guardarNuevoVehiculo() {
   });
 }
 
-// Funciones para mostrar mensajes
 function mostrarMensajeCarga(mensaje) {
   const detalleContainer = document.getElementById("detalleVehiculo");
   detalleContainer.innerHTML = `
@@ -458,7 +427,7 @@ function mostrarMensajeExito(mensaje) {
   detalleContainer.innerHTML = `
     <div class="info-detallada">
       <div class="mensaje-exito">
-        <h2>✅ ${mensaje}</h2>
+        <h2>${mensaje}</h2>
       </div>
     </div>
   `;
@@ -469,14 +438,13 @@ function mostrarMensajeError(mensaje) {
   detalleContainer.innerHTML = `
     <div class="info-detallada">
       <div class="mensaje-error">
-        <h2>❌ ${mensaje}</h2>
+        <h2>${mensaje}</h2>
         <button class="boton_regresar" onclick="cerrarDetalle()">Cerrar</button>
       </div>
     </div>
   `;
 }
 
-// Función para cerrar detalle
 function cerrarDetalle() {
   const detalleContainer = document.getElementById("detalleVehiculo");
   if (detalleContainer) {
@@ -484,7 +452,6 @@ function cerrarDetalle() {
   }
 }
 
-// Funciones adicionales para completar funcionalidad
 function eliminarVehiculo(id) {
   if (!confirm("¿Estás seguro de que quieres eliminar este vehículo?")) {
     return;
@@ -502,10 +469,8 @@ function eliminarVehiculo(id) {
     return response.json();
   })
   .then(() => {
-    // Remover del array local
     monoplazas = monoplazas.filter(vehiculo => vehiculo.id != id);
     
-    // Actualizar la galería
     mostrarVehiculosEnGaleria();
     
     mostrarMensajeExito("¡Vehículo eliminado exitosamente!");
@@ -631,7 +596,6 @@ function actualizarVehiculo(vehiculoId) {
   const formulario = document.getElementById('formularioEditar');
   const formData = new FormData(formulario);
   
-  // Crear objeto del vehículo actualizado
   const vehiculoActualizado = {
     id: vehiculoId,
     equipo: formData.get('equipo'),
@@ -643,14 +607,14 @@ function actualizarVehiculo(vehiculoId) {
     imagen: formData.get('linkImagen'),
     rendimiento: {
       [formData.get('tipoConduccion') || 'normal']: {
-        velocidad_promedio_kmh: "320", // Puedes hacer esto configurable si lo necesitas
+        velocidad_promedio_kmh: "320", 
         consumo_combustible: {
-          seco: "1.9", // Puedes hacer esto configurable si lo necesitas
+          seco: "1.9", 
           lluvioso: "2.1",
           extremo: "2.4"
         },
         desgaste_neumaticos: {
-          seco: "1.5", // Puedes hacer esto configurable si lo necesitas
+          seco: "1.5", 
           lluvioso: "0.8",
           extremo: "2.5"
         }
@@ -676,47 +640,33 @@ function actualizarVehiculo(vehiculoId) {
     return response.json();
   })
   .then(data => {
-    console.log('Vehículo actualizado:', data);
+    console.log(data);
     
-    // Actualizar array local
     const index = monoplazas.findIndex(v => v.id == vehiculoId);
     if (index !== -1) {
       monoplazas[index] = data;
     }
-    
-    // Actualizar la galería de vehículos
     mostrarVehiculosEnGaleria();
+    mostrarMensajeExito("Vehículo actualizado");
     
-    // Mostrar mensaje de éxito
-    mostrarMensajeExito("¡Vehículo actualizado exitosamente!");
-    
-    // Cerrar modal después de 2 segundos
-    setTimeout(() => {
-      cerrarDetalle();
+        setTimeout(() => {
+  cerrarDetalle();
     }, 2000);
   })
   .catch(error => {
-    console.error('Error al actualizar el vehículo:', error);
-    mostrarMensajeError("Error al actualizar el vehículo. Por favor, inténtalo de nuevo.");
+    console.error(error);
+    mostrarMensajeError("Error al actualizar..");
   });
 }
 
-// Event listeners y inicialización
 document.addEventListener("DOMContentLoaded", function() {
-  // Cargar datos iniciales
   cargarPilotos();
   cargarVehiculos();
 });
 
-// Cerrar detalle con tecla Escape
 document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
     cerrarDetalle();
   }
 });
 
-// Exportar funciones para uso global si es necesario
-window.mostrarFormularioAñadir = mostrarFormularioAñadir;
-window.cerrarDetalle = cerrarDetalle;
-window.eliminarVehiculo = eliminarVehiculo;
-window.editarVehiculo = editarVehiculo;

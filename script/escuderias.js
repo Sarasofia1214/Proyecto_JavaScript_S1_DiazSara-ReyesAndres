@@ -27,14 +27,6 @@ function renderEquipos(datas,id) {
   
 }
 
-
-
-
-
-
-
-
-
 function mostrarEscuderias(elemento) {
   const idd = elemento.getAttribute("data-id")
   document.getElementById("cuadro").style.display = "flex"

@@ -61,13 +61,11 @@ function cargarPilotos() {
         }
       });
     })
-    .catch(err => console.error('Error al cargar pilotos:', err));
+    .catch(err => console.error(err));
 }
-
-// Iniciar carga de pilotos
 cargarPilotos();
 
-// Mostrar información de un piloto
+
 function mostrarInformacion(piloto, equipo, equipoId, pilotoId) {
   imgInfo.src = piloto.foto || '';
   nombreInfo.textContent = piloto.nombre;
@@ -75,7 +73,6 @@ function mostrarInformacion(piloto, equipo, equipoId, pilotoId) {
   vehiculoInfo.textContent = piloto.modelo || '';
   podiumsInfo.textContent = piloto.Podiums || '0';
 
-  // Guardar referencia al piloto actual
   pilotoActual = piloto;
   equipoActual = equipo;
   idEquipoActual = equipoId;
@@ -84,30 +81,25 @@ function mostrarInformacion(piloto, equipo, equipoId, pilotoId) {
   tarjetaInfo.style.display = 'flex';
 }
 
-// Ocultar tarjeta de información
+
 function ocultarTarjeta() {
   tarjetaInfo.style.display = 'none';
   pilotoActual = null;
 }
 
-// Evento para el botón Eliminar
 btnEliminar.addEventListener('click', function() {
   if (pilotoActual && idEquipoActual && idPilotoActual) {
-    if (confirm(`¿Estás seguro de que deseas eliminar a ${pilotoActual.nombre}?`)) {
+    if (confirm(`¿Estás seguro de eliminar a ${pilotoActual.nombre}?`)) {
       eliminarPiloto(idEquipoActual, idPilotoActual);
     }
   }
 });
 
-// Función para eliminar un piloto - VERSIÓN CORREGIDA
 function eliminarPiloto(equipoId, pilotoId) {
-  // Primero verificamos que los IDs son válidos
   if (!equipoId || !pilotoId) {
-    alert('Error: ID de equipo o piloto no válido');
     return;
   }
 
-  // Obtener la información actual del equipo
   fetch(`${API_URL}/${equipoId}`)
     .then(res => {
       if (!res.ok) {
@@ -117,20 +109,17 @@ function eliminarPiloto(equipoId, pilotoId) {
     })
     .then(equipo => {
       if (!equipo || !Array.isArray(equipo.pilotos)) {
-        throw new Error('Formato de equipo incorrecto');
+        throw new Error('');
       }
       
-      // Comprobar si el piloto existe en el equipo
       const pilotoIndex = equipo.pilotos.findIndex(p => p.id == pilotoId);
       
       if (pilotoIndex === -1) {
         throw new Error('Piloto no encontrado en este equipo');
       }
       
-      // Crear una copia de la lista de pilotos sin el piloto a eliminar
       const pilotos = equipo.pilotos.filter(p => p.id != pilotoId);
       
-      // Actualizar la lista de pilotos en el equipo
       return fetch(`${API_URL}/${equipoId}`, {
         method: 'PUT',
         headers: {
@@ -150,7 +139,7 @@ function eliminarPiloto(equipoId, pilotoId) {
     })
     .then(data => {
       ocultarTarjeta();
-      cargarPilotos(); // Recargar la lista de pilotos
+      cargarPilotos(); 
       alert('Piloto eliminado correctamente');
     })
     .catch(err => {
@@ -159,19 +148,16 @@ function eliminarPiloto(equipoId, pilotoId) {
     });
 }
 
-// Evento para el botón Editar
 btnEditar.addEventListener('click', function() {
   if (pilotoActual) {
     mostrarFormularioEdicion(pilotoActual);
   }
 });
 
-// Función para mostrar el formulario de edición
 function mostrarFormularioEdicion(piloto) {
-  // Ocultar tarjeta de información
   ocultarTarjeta();
   
-  // Crear el formulario de edición
+
   const formularioEdicion = document.createElement('div');
   formularioEdicion.className = 'formulario-piloto';
   formularioEdicion.id = 'form-editar';
@@ -235,19 +221,15 @@ function mostrarFormularioEdicion(piloto) {
     </form>
   `;
   
-  // Añadir al DOM
+
   document.body.appendChild(formularioEdicion);
-  
-  // Manejar evento de cancelar edición
   document.getElementById('btn-cancelar-edicion').addEventListener('click', function() {
     document.getElementById('form-editar').remove();
   });
   
-  // Manejar evento de submit
+
   document.getElementById('piloto-editar-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Obtener valores actualizados
     const pilotoActualizado = {
       id: idPilotoActual,
       nombre: document.getElementById('edit-nombre').value,
@@ -257,19 +239,18 @@ function mostrarFormularioEdicion(piloto) {
       foto: document.getElementById('edit-imagen').value,
       bandera: document.getElementById('edit-bandera').value,
       pais: document.getElementById('edit-pais').value,
-      // Mantener otros campos que puedan existir
-      ...pilotoActual
+  
     };
     
-    // Actualizar piloto
+   
     actualizarPiloto(idEquipoActual, pilotoActualizado);
     
-    // Eliminar formulario
+   // Eliminar formulario
     document.getElementById('form-editar').remove();
   });
 }
 
-// Genera opciones para el select de posición
+
 function generatePositionOptions(selected) {
   let options = '';
   for (let i = 1; i <= 20; i++) {
@@ -278,21 +259,23 @@ function generatePositionOptions(selected) {
   return options;
 }
 
-// Función para actualizar un piloto
 function actualizarPiloto(equipoId, pilotoActualizado) {
   fetch(`${API_URL}/${equipoId}`)
     .then(res => res.json())
     .then(equipo => {
       if (equipo && equipo.pilotos) {
-        // Actualizar el piloto en la lista
+      
         const pilotos = equipo.pilotos.map(p => {
           if (p.id == pilotoActualizado.id) {
             return pilotoActualizado;
           }
           return p;
         });
+
+
+
+
         
-        // Actualizar el equipo con la lista actualizada de pilotos
         return fetch(`${API_URL}/${equipoId}`, {
           method: 'PUT',
           headers: {
@@ -307,7 +290,7 @@ function actualizarPiloto(equipoId, pilotoActualizado) {
     })
     .then(response => {
       if (response && response.ok) {
-        cargarPilotos(); // Recargar la lista de pilotos
+        cargarPilotos(); 
         alert('Piloto actualizado correctamente');
       }
     })
@@ -317,7 +300,6 @@ function actualizarPiloto(equipoId, pilotoActualizado) {
     });
 }
 
-// Manejadores para mostrar/ocultar el formulario de añadir
 document.getElementById('btn-anadir').addEventListener('click', function() {
   document.getElementById('form-piloto').style.display = 'block';
 });
@@ -327,13 +309,11 @@ document.getElementById('btn-cancelar').addEventListener('click', function() {
   document.getElementById('piloto-form').reset();
 });
 
-// Manejador para el envío del formulario de añadir piloto
 document.getElementById('piloto-form').addEventListener('submit', function(e) {
   e.preventDefault();
   
-  // Obtener los valores del formulario
   const nuevoPiloto = {
-    id: Date.now().toString(), // Generar un ID único
+    id: Date.now().toString(), 
     nombre: document.getElementById('nombre').value,
     modelo: document.getElementById('vehiculo').value,
     escuderia: document.getElementById('equipo').value,
@@ -343,25 +323,23 @@ document.getElementById('piloto-form').addEventListener('submit', function(e) {
     pais: document.getElementById('pais').value,
   };
   
-  // Añadir el piloto a la API
+
   anadirPiloto(nuevoPiloto);
   
-  // Ocultar y resetear el formulario
+
   document.getElementById('form-piloto').style.display = 'none';
   this.reset();
 });
 
-// Función para añadir un piloto a la API
+
 function anadirPiloto(nuevoPiloto) {
-  // Primero buscamos el equipo correspondiente
+
   fetch(API_URL)
     .then(res => res.json())
     .then(equipos => {
-      // Buscar si ya existe un equipo con ese nombre
       const equipoExistente = equipos.find(e => e.equipo === nuevoPiloto.escuderia);
       
       if (equipoExistente) {
-        // Añadir el piloto al equipo existente
         return fetch(`${API_URL}/${equipoExistente.id}`)
           .then(res => res.json())
           .then(equipo => {
@@ -395,7 +373,7 @@ function anadirPiloto(nuevoPiloto) {
     })
     .then(response => {
       if (response.ok) {
-        cargarPilotos(); // Recargar la lista de pilotos
+        cargarPilotos(); 
         alert('Piloto añadido correctamente');
       }
     })
