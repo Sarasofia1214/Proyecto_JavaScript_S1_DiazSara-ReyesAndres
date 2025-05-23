@@ -160,7 +160,7 @@ body {
     border-radius: 0.5vw;
   }
 
-.Añadir {
+.btn-new {
   padding: 10px 20px;
   background-color: #e30000;
   color: white;
@@ -172,7 +172,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.Eliminar{
+.btn-delete{
   padding: 10px 20px;
   background-color: #000000;
   color: white;
@@ -183,7 +183,7 @@ body {
   font-family: "2";
   transition: background-color 0.3s ease;
 }
-.Nuevo {
+.btn-edit {
   padding: 1.5vw;
   background-color: #e30000;
   color: white;
@@ -308,7 +308,7 @@ body {
     position: absolute;
     width: 14vw;
     left: 38vw;
-    top: 18vw;
+    top: 26vw;
   }
   
   #principal .close-btn:hover {
@@ -368,5 +368,3 @@ body {
         top: 50% !important;
     }
   }
-
-  
