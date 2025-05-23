@@ -83,7 +83,6 @@ body {
     filter: brightness(1.2);
   }
   
-  /* Modal Styles */
   #principal {
     position: fixed;
     width: 85vw;
@@ -160,6 +159,8 @@ body {
     object-fit: contain;
     border-radius: 0.5vw;
   }
+
+  .container_botones{}
   
   .circuit-card {
     position: absolute;
@@ -329,4 +330,5 @@ body {
         top: 50% !important;
     }
   }
+
   
