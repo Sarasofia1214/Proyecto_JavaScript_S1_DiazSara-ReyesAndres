@@ -160,7 +160,45 @@ body {
     border-radius: 0.5vw;
   }
 
-  .container_botones{}
+.Añadir {
+  padding: 10px 20px;
+  background-color: #e30000;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "2";
+  transition: background-color 0.3s ease;
+}
+
+.Eliminar{
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "2";
+  transition: background-color 0.3s ease;
+}
+.Nuevo {
+  padding: 1.5vw;
+  background-color: #e30000;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "2";
+  transition: background-color 0.3s ease;
+}
+
+.container_botones{ 
+  display: flex;
+  width: 22vw;
+  justify-content: space-between;}
   
   .circuit-card {
     position: absolute;

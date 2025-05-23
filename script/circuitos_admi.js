@@ -18,7 +18,13 @@ async function fetchEquipos(idd) {
       <p class="añojava">${datas[0]["circuito"][id]["record_vuelta"]["año"]}</p>
       <img src="${datas[0]["circuito"][id]["imagen"]}" class="circuitojava">
       <p class="descripcionjava">${datas[0]["circuito"][id]["descripcion"]}</p>
-    `;
+      <div class="container_botones">
+        <button class="Añadir">Editar</button>
+        <button class="Eliminar">Eliminar</button>
+        <button class="Nuevo">Nuevo</button>
+      </div>
+    
+      `;
   }
 
   function mostrarCircuitos(elemento) {
