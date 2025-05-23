@@ -1,0 +1,332 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "2";
+    box-sizing: border-box;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+      font-family: "1";
+      src: url(../storage/fontss/Formula1-Bold.otf);
+  }
+  
+  @font-face {
+      font-family: "2";
+      src: url(../storage/fontss/Formula1-Regular.otf);
+  }
+  
+  @font-face {
+      font-family: "3";
+      src: url(../storage/fontss/Formula1-Wide.otf);
+  }
+  header {
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    height: 5vw;
+    width: 100%;
+    gap: 8vw;
+    font-family: "3";
+    font-size: 0.9vw;
+    cursor: pointer;
+  }
+  
+  .logo {
+    width: 10vw;
+    padding-left: 2vw;
+  }
+  a{
+    text-decoration: none;
+    color: #000000;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  #zolder {
+  
+    width: 23vw;
+    left: 2vw;
+    top: 2vw;
+  }
+  
+  .circuitos_container {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 5vw);
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+    padding: 2vw;
+  }
+  
+  img {
+    height: auto;
+    max-height: 60vh;
+    width: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  
+  /* Modal Styles */
+  #principal {
+    position: fixed;
+    width: 85vw;
+    height: 85vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 2vw;
+    z-index: 1000;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    
+  }
+  
+  #principal::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+  }
+  
+  .divImagen {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw;
+  }
+  
+  .cataluna {
+    width: 90%;
+    height: auto;
+    max-height: 90%;
+    border-radius: 1vw;
+    object-fit: contain;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .divDescripcion {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+  }
+  
+  .superior {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+  }
+  
+  .imagenCircuito {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .monaco {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.5vw;
+  }
+  
+  .circuit-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 1vw;
+    padding: 1.5vw;
+    width: 90%;
+    height: 40vw;
+    font-family: "2", sans-serif;
+    font-size: 1vw;
+    gap: 1vw;
+    overflow-y: auto;
+    left: 4vw;
+  }
+  .circuit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 1vw;
+    margin-bottom: 1vw;
+  }
+  
+  .circuit-title {
+    font-family: "1", sans-serif;
+    font-size: 2vw;
+    color: #d40000;
+    margin: 0;
+  }
+  
+  .circuit-year {
+    font-family: "3", sans-serif;
+    font-size: 1.5vw;
+    color: #333;
+  }
+  
+  .circuit-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+    margin-bottom: 1vw;
+  }
+  
+  .stat-item {
+    background-color: #f8f8f8;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    border-left: 4px solid #d40000;
+  }
+  
+  .stat-label {
+    font-family: "3", sans-serif;
+    font-size: 0.8vw;
+    color: #666;
+    margin-bottom: 0.5vw;
+    font-weight: bold;
+  }
+  
+  .stat-value {
+    font-family: "2", sans-serif;
+    font-size: 1vw;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .inferior {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .texto1 {
+    text-align: justify;   
+    font-size: 0.9vw;
+    font-family: "2", sans-serif;   
+    padding: 1.5vw;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    border-radius: 1vw;
+    margin-top: 1vw;
+  }
+  
+  /* Close button for modal */
+  #principal .close-btn {
+    position: absolute;
+    top: 1vw;
+    right: 1.5vw;
+    background: none;
+    border: none;
+    font-size: 2vw;
+    cursor: pointer;
+    color: #666;
+    z-index: 10;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .circuitojava{
+    position: absolute;
+    width: 14vw;
+    left: 38vw;
+    top: 18vw;
+  }
+  
+  #principal .close-btn:hover {
+    background-color: #f0f0f0;
+    color: #d40000;
+  }
+  
+  
+  @media (max-width: 430px) {
+    
+      .info-box,
+      #catalunya,
+      #monaco,
+      #spa {
+          width: 90vw !important;
+          min-height: 50vh !important;
+          padding: 4vw !important;
+          font-size: 3.5vw !important;
+          border-radius: 3vw !important;
+          top: 50vh !important;
+          left: 50vw !important;
+          box-shadow: 0 1vh 4vw rgba(0,0,0,0.8) !important;
+      }
+      
+    .circuit-card
+    {    position: absolute; 
+         width: 80vw !important;
+        height: 30vh !important;
+        font-size: 2vw !important;
+        left: 2vw;
+     
+  }
+    .circuit-card .circuit-header {
+        font-size: 2vw !important;
+    }
+    .circuitojava{
+        position: absolute;
+        width: 24vw;
+        left: 48vw;
+        top: 18vw;
+    }
+    .cataluna{
+        width: 70vw !important;
+        height: vh !important;
+        left: 0vw !important;
+        position: absolute;
+        
+   
+    }
+    
+      
+    #zolder,
+    .info-box {
+        width: 93vw !important;
+  
+        left: 50% !important;
+        top: 50% !important;
+    }
+  }
+  
